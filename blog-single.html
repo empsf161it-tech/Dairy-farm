@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Understanding A1 vs A2 Beta-Casein - Dairy Farm Journal</title>
+  <meta name="description" content="Discover how native A2 beta-casein protein differs biochemically from A1 milk, supporting comfortable digestion, gut lining integrity, and bio-available minerals.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231b4332'><path d='M19 13v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6a7 7 0 1 1 14 0z'/></svg>">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+        Dairy Farm
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="index.html#products" class="nav-link">Products</a>
+        <a href="index.html#livestock" class="nav-link">Livestock</a>
+        <a href="blog.html" class="nav-link active">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL">
+          <i class="ph-bold ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i class="ph-bold ph-moon"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary" id="headerLoginBtn">Login</a>
+        <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+        Dairy Farm
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close Menu">
+        <i class="ph-bold ph-x"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link"><i class="ph ph-house"></i> Home</a>
+      <a href="home2.html" class="mobile-nav-link"><i class="ph ph-sparkle"></i> Home 2</a>
+      <a href="services.html" class="mobile-nav-link"><i class="ph ph-gear"></i> Services</a>
+      <a href="index.html#products" class="mobile-nav-link"><i class="ph ph-shopping-bag"></i> Products</a>
+      <a href="index.html#livestock" class="mobile-nav-link"><i class="ph ph-paw-print"></i> Livestock</a>
+      <a href="blog.html" class="mobile-nav-link active"><i class="ph ph-newspaper"></i> Blog</a>
+      <a href="contact.html" class="mobile-nav-link"><i class="ph ph-envelope-simple"></i> Contact</a>
+      <a href="dashboard.html" class="mobile-nav-link"><i class="ph ph-chart-pie-slice"></i> Dashboard</a>
+    </nav>
+
+    <div class="drawer-footer-actions">
+      <div class="drawer-toggle-row">
+        <span>Dark Mode</span>
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <i class="ph-bold ph-moon"></i>
+        </button>
+      </div>
+      <div class="drawer-toggle-row">
+        <span>RTL Layout</span>
+        <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction">
+          <i class="ph-bold ph-arrows-left-right"></i>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ARTICLE HEADER -->
+    <article class="section-padding">
+      <div class="container" style="max-width: 820px;">
+        <div style="text-align: center; margin-block-end: var(--space-5);">
+          <span class="section-badge"><i class="ph-bold ph-flask"></i> Dairy Science & Nutrition</span>
+          <h1 style="font-size: var(--size-h1); font-weight: var(--weight-h1); line-height: 1.15; margin-block: var(--space-3);">
+            Understanding A1 vs A2 Beta-Casein: Why Heritage Pasture Milk Heals the Gut
+          </h1>
+          <div style="display: flex; align-items: center; justify-content: center; gap: var(--space-4); color: var(--color-text-muted); font-size: var(--size-caption);">
+            <span><i class="ph ph-user"></i> By Dr. Julian Thorne (DVM)</span>
+            <span><i class="ph ph-calendar"></i> October 12, 2026</span>
+            <span><i class="ph ph-clock"></i> 5 min read</span>
+          </div>
+        </div>
+
+        <!-- Featured Image -->
+        <img src="https://images.unsplash.com/photo-1527153857715-3908f2ae5e81?auto=format&fit=crop&w=900&q=80" alt="Fresh wholesome milk on farm pasture" style="width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius-global); box-shadow: var(--shadow-global); margin-block-end: var(--space-6);" loading="lazy">
+
+        <!-- Article Body -->
+        <div style="font-size: var(--size-lead); line-height: 1.8; color: var(--color-text-main);">
+          <p>
+            For generations, milk was heralded as nature's most complete superfood: rich in bio-available calcium, immunological antibodies, and whole dietary fats. Yet over recent decades, an increasing number of adults and children reported bloating, sluggishness, and discomfort after consuming standard commercial supermarket dairy.
+          </p>
+
+          <p>
+            While many assumed this was standard lactose intolerance, groundbreaking nutritional biochemistry has uncovered a deeper culprit: the mutation of <strong>beta-casein protein</strong> from the ancient <strong>A2</strong> structure into modern industrial <strong>A1</strong>.
+          </p>
+
+          <h2 style="font-size: var(--size-h2); font-weight: var(--weight-h2); margin-block-start: var(--space-6); text-align: left;">
+            The Single Amino Acid That Changes Everything
+          </h2>
+          <p>
+            Beta-casein is a 209-amino-acid protein chain that accounts for approximately 30% of total milk protein. Thousands of years ago, all domestic bovines produced exclusively the <strong>A2 variant</strong>, characterized by a proline amino acid at position 67.
+          </p>
+
+          <p>
+            Due to intensive selective breeding in European factory herds for higher volumetric yield, a genetic mutation occurred where proline was replaced by <strong>histidine</strong>. When digested in the human small intestine, this histidine bond allows enzymes to cleave off a 7-amino-acid peptide known as <strong>BCM-7 (Beta-Casomorphin-7)</strong>.
+          </p>
+
+          <!-- Key Takeaway Box -->
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-inline-start: 4px solid var(--color-primary); border-radius: var(--radius-global); padding: var(--space-4) var(--space-5); margin-block: var(--space-5);">
+            <strong style="color: var(--color-primary); font-size: 1.1rem; display: block; margin-block-end: 6px;">
+              <i class="ph-bold ph-lightbulb"></i> Clinical Takeaway:
+            </strong>
+            <p style="margin: 0; font-size: var(--size-body);">
+              BCM-7 is an opioid peptide capable of stimulating mucosal inflammation, slowing transit time, and triggering gas or cramps. In native A2 milk, the proline bond remains unbroken, preventing BCM-7 release entirely.
+            </p>
+          </div>
+
+          <h2 style="font-size: var(--size-h2); font-weight: var(--weight-h2); margin-block-start: var(--space-6); text-align: left;">
+            Why Our Indigenous Gir Herd Delivers Pure A2 Milk
+          </h2>
+          <p>
+            At Aura Dairy Farm, we committed early to heritage bovine genetics. Our herd of indigenous Bos indicus Gir cows have never undergone commercial high-yield hybridization. Every animal in our pasture is DNA-sequenced and certified 100% homozygous A2/A2.
+          </p>
+
+          <p>
+            Combined with our chemical-free clover pastures and gentle flash-chilling at 3.8°C, our milk retains active lactase enzymes and fat globule membranes that nurture your microbiome rather than aggravate it.
+          </p>
+        </div>
+
+        <!-- Social Share Row -->
+        <div style="display: flex; align-items: center; justify-content: space-between; border-block: 1px solid var(--color-border); padding-block: var(--space-4); margin-block: var(--space-6);">
+          <strong style="color: var(--color-primary);">Share this publication:</strong>
+          <div style="display: flex; gap: var(--space-2);">
+            <a href="#" class="btn-icon" aria-label="Share on X / Twitter"><i class="ph ph-x-logo"></i></a>
+            <a href="#" class="btn-icon" aria-label="Share on Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="btn-icon" aria-label="Share on LinkedIn"><i class="ph ph-linkedin-logo"></i></a>
+          </div>
+        </div>
+
+        <!-- AUTHOR BIO BOX -->
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-5); display: flex; align-items: center; gap: var(--space-4); margin-block-end: var(--space-7);">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80" alt="Dr. Julian Thorne" style="width: 80px; height: 80px; border-radius: var(--radius-global); object-fit: cover;" loading="lazy">
+          <div>
+            <h3 style="font-size: 1.2rem; font-weight: var(--weight-h3); margin-block-end: 4px;">Dr. Julian Thorne, DVM</h3>
+            <p style="font-size: var(--size-caption); margin: 0; color: var(--color-text-muted);">
+              Lead Veterinarian & Agronomist at Aura Dairy Farm. Specializes in bovine nutritional microbiology, rotational soil regeneration, and holistic livestock medicine.
+            </p>
+          </div>
+        </div>
+
+        <!-- COMMENT SECTION WITH CLIENT-SIDE VALIDATION (STEP 12) -->
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-6);">
+          <h3 style="font-size: var(--size-h3); font-weight: var(--weight-h3); margin-block-end: var(--space-4); text-align: center;">
+            Join the Conversation
+          </h3>
+
+          <form data-validate="true" data-success-msg="Thank you! Your comment has been submitted and is awaiting farm moderation." novalidate>
+            <div class="form-alert-box"></div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+              <div class="form-group">
+                <label class="form-label" for="commentName">Your Name <span class="required-star">*</span></label>
+                <input type="text" id="commentName" class="form-control" placeholder="Jane Doe" required>
+                <div class="invalid-feedback form-feedback">Please enter your name.</div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="commentEmail">Email Address <span class="required-star">*</span></label>
+                <input type="email" id="commentEmail" class="form-control" placeholder="jane@example.com" required>
+                <div class="invalid-feedback form-feedback">Please enter a valid email.</div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="commentBody">Your Thoughts & Questions <span class="required-star">*</span></label>
+              <textarea id="commentBody" rows="4" class="form-control" placeholder="Share your experience with A2 milk or ask a question to our veterinarian..." required></textarea>
+              <div class="invalid-feedback form-feedback">Please write your comment before submitting.</div>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="ph-bold ph-paper-plane-tilt"></i> Post Comment
+            </button>
+          </form>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="site-logo" style="margin-block-end: var(--space-3);">
+            <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+            Dairy Farm
+          </a>
+          <p style="font-size: var(--size-caption); max-width: 320px;">
+            Cultivating certified organic pastures and harvesting wholesome grass-fed milk with love, transparency, and sustainable soil stewardship since 1982.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="btn-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="btn-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="btn-icon" aria-label="Youtube"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="services.html">Services & Subscriptions</a></li>
+            <li><a href="about.html">About Our Herd</a></li>
+            <li><a href="blog.html">Dairy Journal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Visit Pastures</a></li>
+            <li><a href="dashboard.html">Farm Dashboard</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Create Account</a></li>
+            <li><a href="coming-soon.html">Upcoming Ice Creamery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Pasture Headquarters</h4>
+          <p style="font-size: var(--size-caption); margin-block-end: 8px;">
+            <i class="ph ph-map-pin"></i> 742 Green Meadow Pasture Rd, CA 95420
+          </p>
+          <p style="font-size: var(--size-caption); margin-block-end: 8px;">
+            <i class="ph ph-phone"></i> +1 (800) 555-MILK (6455)
+          </p>
+          <p style="font-size: var(--size-caption);">
+            <i class="ph ph-envelope-simple"></i> orders@dairyfarm-pastures.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; 2026 Dairy Farm Inc. All rights reserved. Pure Natural & Certified Organic.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

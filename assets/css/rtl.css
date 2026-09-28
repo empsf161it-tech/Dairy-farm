@@ -1,0 +1,89 @@
+/* ==========================================================================
+   DAIRY FARM - RTL STYLESHEET (rtl.css)
+   Right-to-Left Language Layout Overrides
+   ========================================================================== */
+
+[dir="rtl"],
+body.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+/* --- Navigation & Drawer in RTL --- */
+[dir="rtl"] .mobile-drawer,
+body.rtl .mobile-drawer {
+  right: auto;
+  left: 0;
+  border-inline-start: none;
+  border-inline-end: 1px solid var(--color-border);
+  transform: translateX(-100%);
+}
+
+[dir="rtl"] .mobile-drawer.active,
+body.rtl .mobile-drawer.active {
+  transform: translateX(0);
+}
+
+/* --- Hero Elements Flip --- */
+[dir="rtl"] .hero-text,
+body.rtl .hero-text {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-floating-card,
+body.rtl .hero-floating-card {
+  left: auto;
+  right: -24px;
+}
+
+@media (max-width: 1024px) {
+  [dir="rtl"] .hero-floating-card,
+  body.rtl .hero-floating-card {
+    right: 20px;
+    left: auto;
+  }
+}
+
+/* --- Product Cards & Badges --- */
+[dir="rtl"] .product-badge,
+body.rtl .product-badge {
+  right: auto;
+  left: 14px;
+}
+
+/* --- Forms & Validation --- */
+[dir="rtl"] .form-group,
+body.rtl .form-group {
+  text-align: right;
+}
+
+[dir="rtl"] .dash-table,
+body.rtl .dash-table {
+  text-align: right;
+}
+
+[dir="rtl"] .dash-sidebar,
+body.rtl .dash-sidebar {
+  border-inline-end: none;
+  border-inline-start: 1px solid var(--color-border);
+}
+
+@media (max-width: 768px) {
+  [dir="rtl"] .dash-sidebar,
+  body.rtl .dash-sidebar {
+    left: auto;
+    right: -280px;
+  }
+
+  [dir="rtl"] .dash-sidebar.mobile-open,
+  body.rtl .dash-sidebar.mobile-open {
+    right: 0;
+    left: auto;
+  }
+}
+
+/* --- Footer Link Hover Offset --- */
+[dir="rtl"] .footer-links a:hover,
+body.rtl .footer-links a:hover {
+  transform: translateX(-4px);
+}

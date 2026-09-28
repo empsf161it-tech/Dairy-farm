@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dairy Farm - Pure Organic Milk & Artisanal Dairy Products</title>
+  <meta name="description" content="Experience 100% grass-fed organic milk, farm-fresh butter, artisanal ghee, curd, and natural dairy products delivered fresh daily from pasture to doorstep.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231b4332'><path d='M19 13v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6a7 7 0 1 1 14 0z'/></svg>">
+  
+  <!-- Phosphor Icons CDN -->
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <!-- JSON-LD Structured Data for Local Farm Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "DairyFarm",
+    "name": "Aura Dairy Farm",
+    "image": "https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=1200&q=80",
+    "description": "Artisanal dairy farm specializing in 100% grass-fed raw and pasteurized organic milk, handcrafted curd, cultured butter, and pure cow ghee.",
+    "telephone": "+1-800-555-MILK",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "742 Green Meadow Pasture Rd",
+      "addressLocality": "Verdant Valley",
+      "addressRegion": "CA",
+      "postalCode": "95420",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "05:00",
+      "closes": "19:00"
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (STEP 4)
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="index.html" class="site-logo" aria-label="Dairy Farm Homepage">
+        <span class="logo-icon-wrap">
+          <i class="ph-bold ph-drop"></i>
+        </span>
+        Dairy Farm
+      </a>
+
+      <!-- Desktop Nav (>1024px) -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="#products" class="nav-link">Products</a>
+        <a href="#livestock" class="nav-link">Livestock</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <!-- RTL Toggle Button (Double Arrow Icon ⇆) -->
+        <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL">
+          <i class="ph-bold ph-arrows-left-right"></i>
+        </button>
+
+        <!-- Theme Toggle (Visible only on >1024px) -->
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i class="ph-bold ph-moon"></i>
+        </button>
+
+        <!-- Login Button labeled strictly "Login" -->
+        <a href="login.html" class="btn btn-primary" id="headerLoginBtn">Login</a>
+
+        <!-- Hamburger Button (<= 1024px) -->
+        <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Slide Drawer Overlay & Menu (<= 1024px) -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+        Dairy Farm
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close Menu">
+        <i class="ph-bold ph-x"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link active"><i class="ph ph-house"></i> Home</a>
+      <a href="home2.html" class="mobile-nav-link"><i class="ph ph-sparkle"></i> Home 2</a>
+      <a href="services.html" class="mobile-nav-link"><i class="ph ph-gear"></i> Services</a>
+      <a href="#products" class="mobile-nav-link"><i class="ph ph-shopping-bag"></i> Products</a>
+      <a href="#livestock" class="mobile-nav-link"><i class="ph ph-paw-print"></i> Livestock</a>
+      <a href="blog.html" class="mobile-nav-link"><i class="ph ph-newspaper"></i> Blog</a>
+      <a href="contact.html" class="mobile-nav-link"><i class="ph ph-envelope-simple"></i> Contact</a>
+      <a href="dashboard.html" class="mobile-nav-link"><i class="ph ph-chart-pie-slice"></i> Dashboard</a>
+    </nav>
+
+    <div class="drawer-footer-actions">
+      <!-- Step 6: Theme toggle placed INSIDE hamburger drawer for <= 1024px -->
+      <div class="drawer-toggle-row">
+        <span>Dark Mode</span>
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <i class="ph-bold ph-moon"></i>
+        </button>
+      </div>
+      <div class="drawer-toggle-row">
+        <span>RTL Layout</span>
+        <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction">
+          <i class="ph-bold ph-arrows-left-right"></i>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         1. HERO SECTION (STEP 9.1 & 11: ANIMATIONS REQUIRED)
+         ========================================================================== -->
+    <section class="hero-section">
+      <div class="container hero-content-wrap">
+        <div class="hero-text">
+          <div class="section-badge">
+            <i class="ph-bold ph-leaf"></i> 100% Certified Organic & Pasture-Raised
+          </div>
+          <h1 class="hero-title">Pure, Natural Milk Straight from Lush Pastures.</h1>
+          <p class="hero-subtitle">
+            Crafted with deep respect for cows and land. Wholesome whole milk, artisanal cultured butter, golden Vedic ghee, and probiotic dairy delivered fresh within hours of milking.
+          </p>
+          <div class="hero-btn-group">
+            <a href="#products" class="btn btn-primary">
+              <i class="ph-bold ph-shopping-cart"></i> Explore Products
+            </a>
+            <a href="services.html" class="btn btn-secondary">
+              <i class="ph-bold ph-calendar-check"></i> Subscription Plans
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-media-wrap">
+          <img src="https://images.unsplash.com/photo-1527153857715-3908f2ae5e81?auto=format&fit=crop&w=900&q=80" alt="Fresh organic milk pitcher in dairy pasture" class="hero-main-img" width="900" height="480">
+          <div class="hero-floating-card">
+            <div class="hero-floating-icon">
+              <i class="ph-bold ph-shield-check"></i>
+            </div>
+            <div>
+              <strong style="display: block; font-size: 1.05rem; color: var(--color-primary);">4°C Cold Chain</strong>
+              <small style="color: var(--color-text-muted);">Untouched, pure bottle sealed</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         2. CORE STATS / QUALITY METRICS
+         ========================================================================== -->
+    <section class="container" style="margin-block-start: -20px; position: relative; z-index: 10;">
+      <div class="metrics-grid">
+        <div class="metric-item">
+          <span class="metric-value">1,400+</span>
+          <span class="metric-label">Liters Daily Yield</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-value">250+</span>
+          <span class="metric-label">Grass-Fed Healthy Cattle</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-value">0%</span>
+          <span class="metric-label">Antibiotics & Hormones</span>
+        </div>
+        <div class="metric-item">
+          <span class="metric-value">99.8%</span>
+          <span class="metric-label">Customer Freshness Score</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. PRODUCT CATEGORIES (STEP 9 & Niche Specifics)
+         Fresh Milk, Organic Milk, Curd/Yogurt, Butter, Ghee, Cheese, Paneer, Milkshakes
+         ========================================================================== -->
+    <section class="section-padding" id="products">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Farm Fresh Marketplace</span>
+          <h2 class="section-title">Wholesome Dairy Products</h2>
+          <p class="section-subtext">Every batch is farm-bottled within 3 hours of milking with minimal processing to retain complete bio-available nutrients, healthy enzymes, and natural creaminess.</p>
+        </div>
+
+        <div class="card-grid">
+          <!-- 1. Fresh Milk -->
+          <article class="product-card product-item-wrap" data-category="milk">
+            <span class="product-badge">Best Seller</span>
+            <div class="product-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=600&q=80" alt="Pure Farm Fresh Milk" class="product-thumb" loading="lazy">
+            </div>
+            <div class="product-content">
+              <span class="product-category-tag">Fresh Milk</span>
+              <h3 class="product-title">Raw Whole Pasture Milk</h3>
+              <div class="product-specs">
+                <span class="product-spec-item"><i class="ph ph-drop"></i> 4.5% Fat</span>
+                <span class="product-spec-item"><i class="ph ph-clock"></i> Day Milked</span>
+              </div>
+              <p class="card-text">Directly drawn from pasture-grazing cows, gently chilled, unhomogenized with pure thick cream top.</p>
+              <div class="product-price-row">
+                <span class="product-price">$3.80 <small style="font-size:0.75rem; color:var(--color-text-muted);">/ liter</small></span>
+                <a href="services.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Order Fresh</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Organic Milk -->
+          <article class="product-card product-item-wrap" data-category="milk">
+            <span class="product-badge">Certified A2</span>
+            <div class="product-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1563636619-e9143da7973b?auto=format&fit=crop&w=600&q=80" alt="Certified Organic A2 Milk" class="product-thumb" loading="lazy">
+            </div>
+            <div class="product-content">
+              <span class="product-category-tag">Organic Milk</span>
+              <h3 class="product-title">A2 Vedic Desi Milk</h3>
+              <div class="product-specs">
+                <span class="product-spec-item"><i class="ph ph-certificate"></i> Certified</span>
+                <span class="product-spec-item"><i class="ph ph-heart"></i> Easy Digest</span>
+              </div>
+              <p class="card-text">Rich in native A2 beta-casein protein from indigenous Gir cattle grazing freely on natural herbs.</p>
+              <div class="product-price-row">
+                <span class="product-price">$4.50 <small style="font-size:0.75rem; color:var(--color-text-muted);">/ liter</small></span>
+                <a href="services.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Order Fresh</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Curd / Yogurt -->
+          <article class="product-card product-item-wrap" data-category="cultured">
+            <div class="product-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=600&q=80" alt="Pot-Set Probiotic Curd" class="product-thumb" loading="lazy">
+            </div>
+            <div class="product-content">
+              <span class="product-category-tag">Curd / Yogurt</span>
+              <h3 class="product-title">Pot-Set Greek Curd</h3>
+              <div class="product-specs">
+                <span class="product-spec-item"><i class="ph ph-shield-plus"></i> Live Cultures</span>
+                <span class="product-spec-item"><i class="ph ph-sparkle"></i> Earthen Pot</span>
+              </div>
+              <p class="card-text">Naturally slow-fermented in clay pots containing millions of active probiotics for gut longevity.</p>
+              <div class="product-price-row">
+                <span class="product-price">$4.20 <small style="font-size:0.75rem; color:var(--color-text-muted);">/ 500g</small></span>
+                <a href="services.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Order Fresh</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Butter -->
+          <article class="product-card product-item-wrap" data-category="butter">
+            <div class="product-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1589985270826-4b7bb135bc9d?auto=format&fit=crop&w=600&q=80" alt="Cultured Golden Farm Butter" class="product-thumb" loading="lazy">
+            </div>
+            <div class="product-content">
+              <span class="product-category-tag">Butter</span>
+              <h3 class="product-title">Cultured Artisanal Butter</h3>
+              <div class="product-specs">
+                <span class="product-spec-item"><i class="ph ph-flower"></i> Grass-Fed</span>
+                <span class="product-spec-item"><i class="ph ph-scales"></i> 84% Butterfat</span>
+              </div>
+              <p class="card-text">Slow-churned from cultured cream with a bright yellow hue, silky texture, and deep hazelnut aroma.</p>
+              <div class="product-price-row">
+                <span class="product-price">$6.00 <small style="font-size:0.75rem; color:var(--color-text-muted);">/ 250g</small></span>
+                <a href="services.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Order Fresh</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 5. Ghee -->
+          <article class="product-card product-item-wrap" data-category="ghee">
+            <span class="product-badge">Golden Aroma</span>
+            <div class="product-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&w=600&q=80" alt="Traditional Bilona Cow Ghee" class="product-thumb" loading="lazy">
+            </div>
+            <div class="product-content">
+              <span class="product-category-tag">Ghee</span>
+              <h3 class="product-title">Traditional Bilona Ghee</h3>
+              <div class="product-specs">
+                <span class="product-spec-item"><i class="ph ph-fire"></i> Wood Fired</span>
+                <span class="product-spec-item"><i class="ph ph-sun"></i> Granular</span>
+              </div>
+              <p class="card-text">Slowly clarified over organic firewood in brass vats to achieve irresistible nutty flavor and granules.</p>
+              <div class="product-price-row">
+                <span class="product-price">$18.50 <small style="font-size:0.75rem; color:var(--color-text-muted);">/ 500ml</small></span>
+                <a href="services.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Order Fresh</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 6. Cheese -->
+          <article class="product-card product-item-wrap" data-category="cheese">
+            <div class="product-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?auto=format&fit=crop&w=600&q=80" alt="Cave Aged Farmstead Cheese" class="product-thumb" loading="lazy">
+            </div>
+            <div class="product-content">
+              <span class="product-category-tag">Cheese</span>
+              <h3 class="product-title">Aged Farmstead Cheddar</h3>
+              <div class="product-specs">
+                <span class="product-spec-item"><i class="ph ph-timer"></i> 12 Mo. Aged</span>
+                <span class="product-spec-item"><i class="ph ph-fingerprint"></i> Raw Milk</span>
+              </div>
+              <p class="card-text">Handcrafted in small 10kg wheels, cave-aged on cedar shelves for a savory, complex crystallite finish.</p>
+              <div class="product-price-row">
+                <span class="product-price">$9.50 <small style="font-size:0.75rem; color:var(--color-text-muted);">/ 300g</small></span>
+                <a href="services.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Order Fresh</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 7. Paneer -->
+          <article class="product-card product-item-wrap" data-category="paneer">
+            <div class="product-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=600&q=80" alt="Soft Organic Malai Paneer" class="product-thumb" loading="lazy">
+            </div>
+            <div class="product-content">
+              <span class="product-category-tag">Paneer</span>
+              <h3 class="product-title">Soft Malai Cottage Paneer</h3>
+              <div class="product-specs">
+                <span class="product-spec-item"><i class="ph ph-feather"></i> Melt-in-Mouth</span>
+                <span class="product-spec-item"><i class="ph ph-check"></i> Zero Starch</span>
+              </div>
+              <p class="card-text">Coagulated using pure lemon and unpasteurized whey. Exceptionally spongy, luscious, and protein dense.</p>
+              <div class="product-price-row">
+                <span class="product-price">$5.40 <small style="font-size:0.75rem; color:var(--color-text-muted);">/ 400g</small></span>
+                <a href="services.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Order Fresh</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- 8. Milkshakes & Dairy Drinks -->
+          <article class="product-card product-item-wrap" data-category="drinks">
+            <div class="product-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?auto=format&fit=crop&w=600&q=80" alt="Artisanal Farm Milkshake" class="product-thumb" loading="lazy">
+            </div>
+            <div class="product-content">
+              <span class="product-category-tag">Milkshakes & Beverages</span>
+              <h3 class="product-title">Bourbon Vanilla Milkshake</h3>
+              <div class="product-specs">
+                <span class="product-spec-item"><i class="ph ph-glass-water"></i> Real Pods</span>
+                <span class="product-spec-item"><i class="ph ph-sparkle"></i> No Refined Sugar</span>
+              </div>
+              <p class="card-text">Blended with real Madagascar vanilla beans, whole pastured milk, and raw wildflower honey.</p>
+              <div class="product-price-row">
+                <span class="product-price">$4.20 <small style="font-size:0.75rem; color:var(--color-text-muted);">/ 350ml</small></span>
+                <a href="services.html" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Order Fresh</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. ABOUT / FARM STORY & SUSTAINABILITY (STEP 9.1)
+         ========================================================================== -->
+    <section class="section-padding" style="background: var(--color-surface); border-block: 1px solid var(--color-border);" id="about">
+      <div class="container">
+        <div class="hero-content-wrap">
+          <div>
+            <span class="section-badge"><i class="ph-bold ph-heart"></i> Our Pastoral Heritage</span>
+            <h2 style="text-align: left; font-size: var(--size-h2); line-height: 1.15; margin-block-end: var(--space-4);">Rooted in Pasture Care, Gentle Milking & Ecological Harmony.</h2>
+            <p class="lead">Founded in 1982 in the sunny Green Meadow basin, Aura Dairy Farm was built on a foundational promise: cows living under the open sky yield milk of incomparable sweetness and vital nourishment.</p>
+            <p>Our herd roams across 640 acres of rotational organic pastures free of chemical fertilizers, pesticides, or GMOs. We practice humane calf-at-foot milking, continuous holistic grazing, and state-of-the-art cold-chain sanitation.</p>
+            
+            <div style="display: flex; gap: var(--space-4); margin-block: var(--space-4);">
+              <div style="display: flex; align-items: center; gap: var(--space-2);">
+                <i class="ph-bold ph-check-circle" style="color: var(--color-primary); font-size: 1.4rem;"></i>
+                <strong>Rotational Grazing</strong>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-2);">
+                <i class="ph-bold ph-check-circle" style="color: var(--color-primary); font-size: 1.4rem;"></i>
+                <strong>Zero Hormones</strong>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--space-2);">
+                <i class="ph-bold ph-check-circle" style="color: var(--color-primary); font-size: 1.4rem;"></i>
+                <strong>Eco Glass Bottles</strong>
+              </div>
+            </div>
+
+            <a href="about.html" class="btn btn-primary" style="margin-block-start: var(--space-2);">Read Full Farm Story</a>
+          </div>
+
+          <div>
+            <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?auto=format&fit=crop&w=800&q=80" alt="Cows grazing peacefully in green field" style="width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius-global); box-shadow: var(--shadow-global); border: 1px solid var(--color-border);" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. LIVESTOCK MANAGEMENT & WELFARE HIGHLIGHTS (STEP 9.1 & 3)
+         ========================================================================== -->
+    <section class="section-padding" id="livestock">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Livestock Care & Welfare</span>
+          <h2 class="section-title">Happy Cows, Healthy Milk</h2>
+          <p class="section-subtext">We monitor every single bovine with non-invasive IoT wearable biometric collars, ensuring personalized nutrient intake, rest cycles, and vet care.</p>
+        </div>
+
+        <div class="livestock-grid">
+          <div class="livestock-card">
+            <img src="https://images.unsplash.com/photo-1546445317-29f4545e9d53?auto=format&fit=crop&w=350&q=80" alt="Jersey Heritage Cattle" class="livestock-avatar" loading="lazy">
+            <h3 class="card-title">Purebred Jersey Heritage</h3>
+            <p class="card-text">Famous for naturally higher butterfat (over 5%) and rich beta-carotene, giving our milk and golden butter its vibrant sunny creaminess.</p>
+            <div class="card-footer">
+              <span class="section-badge" style="margin: 0;">Butterfat King • 82 Head</span>
+            </div>
+          </div>
+
+          <div class="livestock-card">
+            <img src="https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?auto=format&fit=crop&w=350&q=80" alt="Indigenous Gir Cattle" class="livestock-avatar" loading="lazy">
+            <h3 class="card-title">Indigenous Gir Cattle (A2)</h3>
+            <p class="card-text">Prized for the authentic A2 protein gene and distinct humped build. Grazes on wild medicinal herbs across sunny meadow ridges.</p>
+            <div class="card-footer">
+              <span class="section-badge" style="margin: 0;">Certified A2 Beta • 115 Head</span>
+            </div>
+          </div>
+
+          <div class="livestock-card">
+            <img src="https://images.unsplash.com/photo-1527153857715-3908f2ae5e81?auto=format&fit=crop&w=350&q=80" alt="Holstein Friesian" class="livestock-avatar" loading="lazy">
+            <h3 class="card-title">Holstein Friesian</h3>
+            <p class="card-text">Known for balanced hydration, optimal solids-not-fat (SNF), and crisp refreshing taste preferred for cold curd culture.</p>
+            <div class="card-footer">
+              <span class="section-badge" style="margin: 0;">Balanced Yield • 55 Head</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. SERVICES & SUBSCRIPTIONS (STEP 9.1 & 3)
+         ========================================================================== -->
+    <section class="section-padding" style="background: var(--color-surface); border-block: 1px solid var(--color-border);" id="services">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Farm Services</span>
+          <h2 class="section-title">Fresh Dairy at Your Service</h2>
+          <p class="section-subtext">Flexible doorstep delivery, farm-to-table corporate catering, and educational agro-tourism for families.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">
+              <i class="ph ph-van"></i>
+            </div>
+            <h3 class="card-title">Daily Doorstep Milk Delivery</h3>
+            <p class="card-text">Chilled glass bottles delivered directly to your doorstep before 7:00 AM every morning with pause/resume scheduling.</p>
+            <div class="card-footer">
+              <a href="services.html" class="btn btn-secondary">View Subscription</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">
+              <i class="ph ph-buildings"></i>
+            </div>
+            <h3 class="card-title">Wholesale & Culinary Supply</h3>
+            <p class="card-text">Bulk pasteurized milk, unsalted butter, and aged cheddar custom portioned for Michelin restaurants and artisan bakeries.</p>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-secondary">Request Wholesale</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon">
+              <i class="ph ph-compass"></i>
+            </div>
+            <h3 class="card-title">Farm Tours & Butter Workshops</h3>
+            <p class="card-text">Immerse your family in gentle calf feeding, modern automated milking parlors, and hand-churned butter masterclasses.</p>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-secondary">Book a Visit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. TESTIMONIALS (STEP 9.1 & 11)
+         ========================================================================== -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Client Stories</span>
+          <h2 class="section-title">Loved by Families & Chefs</h2>
+          <p class="section-subtext">Hear what our daily subscribers and award-winning culinary partners say about our pasture-fresh dairy.</p>
+        </div>
+
+        <div class="testimonial-wrapper">
+          <div class="testimonial-card">
+            <i class="ph-bold ph-quotes quote-icon"></i>
+            <p class="testimonial-quote">"Switching to Aura Dairy's raw A2 milk changed our morning routine. The rich cream top and pure grass-fed flavor take me back to childhood memories on my grandparents' farm."</p>
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80" alt="Customer Eleanor Vance" class="testimonial-author-avatar">
+            <h4 class="testimonial-author-name">Eleanor Vance</h4>
+            <span class="testimonial-author-role">Artisanal Baker & Culinary Critic</span>
+          </div>
+
+          <div class="testimonial-nav-btns">
+            <button type="button" class="btn-icon" id="prevTestimonial" aria-label="Previous Testimonial">
+              <i class="ph-bold ph-caret-left"></i>
+            </button>
+            <button type="button" class="btn-icon" id="nextTestimonial" aria-label="Next Testimonial">
+              <i class="ph-bold ph-caret-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. FULL-WIDTH CALL TO ACTION (STEP 9.1 & 3)
+         ========================================================================== -->
+    <section class="container" style="margin-block-end: var(--space-8);">
+      <div class="cta-banner">
+        <h2>Taste the Pure Difference of Pasture Grazing.</h2>
+        <p>Subscribe today and enjoy your first week of fresh glass-bottled organic milk with complimentary farm-churned cultured butter.</p>
+        <div class="cta-btn-group">
+          <a href="services.html" class="btn btn-accent" style="color: #ffffff;">Start Milk Subscription</a>
+          <a href="contact.html" class="btn btn-secondary" style="border-color: #ffffff; color: #ffffff;">Contact Farm Office</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER RULES (STEP 10)
+       - >1024px: Multi-column horizontal grid
+       - 768px-1024px: Properly aligned grid/stacked
+       - <768px: Single column, center aligned
+       - Copyright line always at bottom, centered
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="site-logo" style="margin-block-end: var(--space-3);">
+            <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+            Dairy Farm
+          </a>
+          <p style="font-size: var(--size-caption); max-width: 320px;">
+            Cultivating certified organic pastures and harvesting wholesome grass-fed milk with love, transparency, and sustainable soil stewardship since 1982.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="btn-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="btn-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="btn-icon" aria-label="Youtube"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="services.html">Services & Subscriptions</a></li>
+            <li><a href="about.html">About Our Herd</a></li>
+            <li><a href="blog.html">Dairy Journal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Visit Pastures</a></li>
+            <li><a href="dashboard.html">Farm Dashboard</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Create Account</a></li>
+            <li><a href="coming-soon.html">Upcoming Ice Creamery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Pasture Headquarters</h4>
+          <p style="font-size: var(--size-caption); margin-block-end: 8px;">
+            <i class="ph ph-map-pin"></i> 742 Green Meadow Pasture Rd, Verdant Valley, CA 95420
+          </p>
+          <p style="font-size: var(--size-caption); margin-block-end: 8px;">
+            <i class="ph ph-phone"></i> +1 (800) 555-MILK (6455)
+          </p>
+          <p style="font-size: var(--size-caption);">
+            <i class="ph ph-envelope-simple"></i> orders@dairyfarm-pastures.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; 2026 Dairy Farm Inc. All rights reserved. Pure Natural & Certified Organic.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

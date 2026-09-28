@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dairy Farm - Artisanal Agritech & Farmstead Fresh</title>
+  <meta name="description" content="Discover our innovative pasture-to-table dairy experience. Calculate your custom organic milk subscription and inspect today's live milking batches.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231b4332'><path d='M19 13v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6a7 7 0 1 1 14 0z'/></svg>">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       HEADER & NAVIGATION (STEP 4)
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo" aria-label="Dairy Farm Homepage">
+        <span class="logo-icon-wrap">
+          <i class="ph-bold ph-drop"></i>
+        </span>
+        Dairy Farm
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link active">Home 2</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="index.html#products" class="nav-link">Products</a>
+        <a href="index.html#livestock" class="nav-link">Livestock</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL">
+          <i class="ph-bold ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i class="ph-bold ph-moon"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary" id="headerLoginBtn">Login</a>
+        <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+        Dairy Farm
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close Menu">
+        <i class="ph-bold ph-x"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link"><i class="ph ph-house"></i> Home</a>
+      <a href="home2.html" class="mobile-nav-link active"><i class="ph ph-sparkle"></i> Home 2</a>
+      <a href="services.html" class="mobile-nav-link"><i class="ph ph-gear"></i> Services</a>
+      <a href="index.html#products" class="mobile-nav-link"><i class="ph ph-shopping-bag"></i> Products</a>
+      <a href="index.html#livestock" class="mobile-nav-link"><i class="ph ph-paw-print"></i> Livestock</a>
+      <a href="blog.html" class="mobile-nav-link"><i class="ph ph-newspaper"></i> Blog</a>
+      <a href="contact.html" class="mobile-nav-link"><i class="ph ph-envelope-simple"></i> Contact</a>
+      <a href="dashboard.html" class="mobile-nav-link"><i class="ph ph-chart-pie-slice"></i> Dashboard</a>
+    </nav>
+
+    <div class="drawer-footer-actions">
+      <div class="drawer-toggle-row">
+        <span>Dark Mode</span>
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <i class="ph-bold ph-moon"></i>
+        </button>
+      </div>
+      <div class="drawer-toggle-row">
+        <span>RTL Layout</span>
+        <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction">
+          <i class="ph-bold ph-arrows-left-right"></i>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ==========================================================================
+         UNIQUE HERO STYLE: CENTERED EDITORIAL WITH LIVE BATCH TELEMETRY
+         ========================================================================== -->
+    <section class="hero-section" style="text-align: center; padding-block: var(--space-8);">
+      <div class="container" style="max-width: 900px;">
+        <span class="section-badge" style="animation: heroSlideUp 0.6s ease both;">
+          <i class="ph-bold ph-broadcast"></i> Live From Morning Milking Session
+        </span>
+        <h1 class="hero-title" style="margin-block: var(--space-3); animation: heroSlideUp 0.8s 0.1s ease both;">
+          Wholesome Dairy Reimagined with Pasture Precision.
+        </h1>
+        <p class="hero-subtitle" style="margin-inline: auto; animation: heroSlideUp 0.8s 0.2s ease both;">
+          Track your morning bottle directly from our cold-storage bulk vats to your kitchen counter. Certified 100% pasture-grazed, cold-pressed, and non-homogenized.
+        </p>
+
+        <!-- Live Milking Telemetry Bar -->
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-4); margin-block: var(--space-5); display: flex; align-items: center; justify-content: space-around; flex-wrap: wrap; gap: var(--space-3); box-shadow: var(--shadow-global); animation: heroFadeZoom 0.9s 0.3s ease both;">
+          <div>
+            <small style="color: var(--color-text-muted); display: block;">Today's Morning Batch</small>
+            <strong style="color: var(--color-primary); font-size: 1.15rem;">#BATCH-842 (Gir A2)</strong>
+          </div>
+          <div>
+            <small style="color: var(--color-text-muted); display: block;">Chilling Temperature</small>
+            <strong style="color: var(--color-success); font-size: 1.15rem;">3.8°C Steady</strong>
+          </div>
+          <div>
+            <small style="color: var(--color-text-muted); display: block;">Natural Butterfat</small>
+            <strong style="color: var(--color-accent-dark); font-size: 1.15rem;">4.75% Rich Cream</strong>
+          </div>
+          <div>
+            <small style="color: var(--color-text-muted); display: block;">Bottle Seal Dispatch</small>
+            <strong style="color: var(--color-primary); font-size: 1.15rem;">05:45 AM Today</strong>
+          </div>
+        </div>
+
+        <div class="hero-btn-group" style="justify-content: center;">
+          <a href="#calculator" class="btn btn-primary">
+            <i class="ph-bold ph-calculator"></i> Build Custom Subscription
+          </a>
+          <a href="dashboard.html" class="btn btn-secondary">
+            <i class="ph-bold ph-chart-line-up"></i> View Farm Ops
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         INTERACTIVE SECTION (STEP 9.2 REQUIREMENT):
+         CUSTOM DAIRY SUBSCRIPTION & NUTRITION CALCULATOR
+         ========================================================================== -->
+    <section class="section-padding" id="calculator" style="background: var(--color-surface); border-block: 1px solid var(--color-border);">
+      <div class="container" style="max-width: 980px;">
+        <div class="section-header">
+          <span class="section-badge">Interactive Configurator</span>
+          <h2 class="section-title">Calculate Your Custom Dairy Plan</h2>
+          <p class="section-subtext">Choose your preferred dairy type, daily family quantity, and delivery frequency to get an instant calculation with nutritional metrics.</p>
+        </div>
+
+        <div style="background: var(--color-secondary); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-6); box-shadow: var(--shadow-global); display: grid; grid-template-columns: 1.2fr 1fr; gap: var(--space-6); align-items: center;">
+          <!-- Controls -->
+          <div>
+            <div class="form-group">
+              <label class="form-label" for="calcMilkType">Select Milk Variety</label>
+              <select id="calcMilkType" class="form-control">
+                <option value="raw" data-price="3.80" data-protein="3.4" data-fat="4.5">Raw Grass-Fed Whole Milk ($3.80/L)</option>
+                <option value="a2" data-price="4.50" data-protein="3.6" data-fat="4.8" selected>Native Gir Cow A2 Milk ($4.50/L)</option>
+                <option value="curd" data-price="4.20" data-protein="4.2" data-fat="4.0">Pot-Set Greek Curd ($4.20/500g)</option>
+                <option value="butter" data-price="6.00" data-protein="1.0" data-fat="84.0">Cultured Farm Butter ($6.00/250g)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="calcQuantity">Daily Bottles / Liters: <span id="calcQuantityVal" style="color: var(--color-primary); font-weight: bold;">2 Liters</span></label>
+              <input type="range" id="calcQuantity" min="1" max="10" value="2" class="form-control" style="cursor: pointer; padding: 4px;">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="calcFrequency">Delivery Frequency</label>
+              <select id="calcFrequency" class="form-control">
+                <option value="daily" selected>Daily Morning Delivery (7 days/wk)</option>
+                <option value="alternate">Alternate Days (Mon, Wed, Fri, Sun)</option>
+                <option value="weekdays">Weekdays Only (Mon - Fri)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dynamic Output Card -->
+          <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-5); text-align: center; box-shadow: var(--shadow-global);">
+            <span class="section-badge" style="margin-block-end: var(--space-2);">Estimated Monthly Total</span>
+            <div id="calcTotalPrice" style="font-family: var(--font-heading); font-size: 3rem; font-weight: var(--weight-h1); color: var(--color-primary); margin-block: var(--space-2);">$270.00</div>
+            <p style="font-size: var(--size-caption); color: var(--color-text-muted); margin-block-end: var(--space-3);">Includes free glass bottle deposits, morning doorstep delivery & temperature chilling box.</p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); margin-block: var(--space-3); border-block: 1px solid var(--color-border); padding-block: var(--space-3);">
+              <div>
+                <small style="color: var(--color-text-muted); display: block;">Daily Bio Protein</small>
+                <strong id="calcProtein" style="color: var(--color-text-main); font-size: 1.1rem;">72g</strong>
+              </div>
+              <div>
+                <small style="color: var(--color-text-muted); display: block;">Healthy Milk Fat</small>
+                <strong id="calcFat" style="color: var(--color-text-main); font-size: 1.1rem;">4.8%</strong>
+              </div>
+            </div>
+
+            <a href="services.html" class="btn btn-primary" style="width: 100%;">Confirm Subscription</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         REORGANIZED HIGHLIGHTS: FOUR PILLARS OF NATURAL FARMING
+         ========================================================================== -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Farming Philosophy</span>
+          <h2 class="section-title">The Four Pillars of Pure Pasture Milk</h2>
+          <p class="section-subtext">We eliminate industrial shortcuts in favor of rhythmic, ethical animal care and undisturbed soil ecosystems.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-sun"></i></div>
+            <h3 class="card-title">Open Sky Sunshine</h3>
+            <p class="card-text">Our cows enjoy 12 hours of natural daylight grazing across open hillsides, infusing their milk with potent bio-available Vitamin D.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-plant"></i></div>
+            <h3 class="card-title">Poly-Culture Pastures</h3>
+            <p class="card-text">Over 18 varieties of natural grasses, clover, alfalfa, and wild medicinal chicory nourish our cows without synthetic silage or grain force-feeding.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-thermometer-cold"></i></div>
+            <h3 class="card-title">Rapid Flash Cooling</h3>
+            <p class="card-text">Milk is instantly cooled from cow body temperature (38°C) down to 3.5°C within 8 minutes inside sanitized stainless steel bulk tanks.</p>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-recycle"></i></div>
+            <h3 class="card-title">Circularity & Zero Waste</h3>
+            <p class="card-text">Every delivery uses returnable amber glass bottles. Farm manure fuels on-site biomethane digestors powering our cold storage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         CALL TO ACTION BANNER
+         ========================================================================== -->
+    <section class="container" style="margin-block-end: var(--space-8);">
+      <div class="cta-banner">
+        <h2>Experience Farm Fresh Milk Tomorrow Morning.</h2>
+        <p>Order before 8:00 PM today and our chilled delivery fleet will place sanitized glass bottles in your doorstep insulated box by 6:30 AM.</p>
+        <div class="cta-btn-group">
+          <a href="services.html" class="btn btn-accent" style="color: #ffffff;">Choose Your Plan</a>
+          <a href="contact.html" class="btn btn-secondary" style="border-color: #ffffff; color: #ffffff;">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="site-logo" style="margin-block-end: var(--space-3);">
+            <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+            Dairy Farm
+          </a>
+          <p style="font-size: var(--size-caption); max-width: 320px;">
+            Cultivating certified organic pastures and harvesting wholesome grass-fed milk with love, transparency, and sustainable soil stewardship since 1982.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="btn-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="btn-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="btn-icon" aria-label="Youtube"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="services.html">Services & Subscriptions</a></li>
+            <li><a href="about.html">About Our Herd</a></li>
+            <li><a href="blog.html">Dairy Journal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Visit Pastures</a></li>
+            <li><a href="dashboard.html">Farm Dashboard</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Create Account</a></li>
+            <li><a href="coming-soon.html">Upcoming Ice Creamery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Pasture Headquarters</h4>
+          <p style="font-size: var(--size-caption); margin-block-end: 8px;">
+            <i class="ph ph-map-pin"></i> 742 Green Meadow Pasture Rd, CA 95420
+          </p>
+          <p style="font-size: var(--size-caption); margin-block-end: 8px;">
+            <i class="ph ph-phone"></i> +1 (800) 555-MILK (6455)
+          </p>
+          <p style="font-size: var(--size-caption);">
+            <i class="ph ph-envelope-simple"></i> orders@dairyfarm-pastures.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; 2026 Dairy Farm Inc. All rights reserved. Pure Natural & Certified Organic.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <!-- Home2 Interactive Calculator Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const typeSelect = document.querySelector('#calcMilkType');
+      const qtySlider = document.querySelector('#calcQuantity');
+      const qtyVal = document.querySelector('#calcQuantityVal');
+      const freqSelect = document.querySelector('#calcFrequency');
+      const totalEl = document.querySelector('#calcTotalPrice');
+      const proteinEl = document.querySelector('#calcProtein');
+      const fatEl = document.querySelector('#calcFat');
+
+      function recalculate() {
+        if (!typeSelect || !qtySlider) return;
+        const selectedOpt = typeSelect.options[typeSelect.selectedIndex];
+        const unitPrice = parseFloat(selectedOpt.dataset.price) || 4.5;
+        const proteinPerUnit = parseFloat(selectedOpt.dataset.protein) || 3.5;
+        const fatPct = selectedOpt.dataset.fat || '4.5';
+        const qty = parseInt(qtySlider.value, 10);
+
+        qtyVal.textContent = `${qty} ${typeSelect.value === 'curd' || typeSelect.value === 'butter' ? 'Packs' : 'Liters'}`;
+
+        let daysPerMonth = 30;
+        if (freqSelect.value === 'alternate') daysPerMonth = 15;
+        if (freqSelect.value === 'weekdays') daysPerMonth = 22;
+
+        const totalCost = (unitPrice * qty * daysPerMonth).toFixed(2);
+        totalEl.textContent = `$${totalCost}`;
+        proteinEl.textContent = `${(proteinPerUnit * qty * 10).toFixed(0)}g`;
+        fatEl.textContent = `${fatPct}%`;
+      }
+
+      if (typeSelect && qtySlider && freqSelect) {
+        typeSelect.addEventListener('change', recalculate);
+        qtySlider.addEventListener('input', recalculate);
+        freqSelect.addEventListener('change', recalculate);
+        recalculate();
+      }
+    });
+  </script>
+</body>
+</html>

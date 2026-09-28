@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon - Artisanal Farmstead Creamery | Dairy Farm</title>
+  <meta name="description" content="Our slow-churned grass-fed gelato and artisanal ice creamery is coming soon. Sign up for early VIP milk tasting invitations.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231b4332'><path d='M19 13v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6a7 7 0 1 1 14 0z'/></svg>">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+        Dairy Farm
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="index.html#products" class="nav-link">Products</a>
+        <a href="index.html#livestock" class="nav-link">Livestock</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL">
+          <i class="ph-bold ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i class="ph-bold ph-moon"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary" id="headerLoginBtn">Login</a>
+        <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+        Dairy Farm
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close Menu">
+        <i class="ph-bold ph-x"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link"><i class="ph ph-house"></i> Home</a>
+      <a href="home2.html" class="mobile-nav-link"><i class="ph ph-sparkle"></i> Home 2</a>
+      <a href="services.html" class="mobile-nav-link"><i class="ph ph-gear"></i> Services</a>
+      <a href="index.html#products" class="mobile-nav-link"><i class="ph ph-shopping-bag"></i> Products</a>
+      <a href="index.html#livestock" class="mobile-nav-link"><i class="ph ph-paw-print"></i> Livestock</a>
+      <a href="blog.html" class="mobile-nav-link"><i class="ph ph-newspaper"></i> Blog</a>
+      <a href="contact.html" class="mobile-nav-link"><i class="ph ph-envelope-simple"></i> Contact</a>
+      <a href="dashboard.html" class="mobile-nav-link"><i class="ph ph-chart-pie-slice"></i> Dashboard</a>
+    </nav>
+
+    <div class="drawer-footer-actions">
+      <div class="drawer-toggle-row">
+        <span>Dark Mode</span>
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <i class="ph-bold ph-moon"></i>
+        </button>
+      </div>
+      <div class="drawer-toggle-row">
+        <span>RTL Layout</span>
+        <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction">
+          <i class="ph-bold ph-arrows-left-right"></i>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; padding-block: var(--space-8);">
+    <div class="container" style="max-width: 760px; text-align: center;">
+      <span class="section-badge"><i class="ph-bold ph-ice-cream"></i> Churning Something Delicious</span>
+      
+      <h1 style="font-size: var(--size-h1); font-weight: var(--weight-h1); margin-block: var(--space-2);">
+        Our Farmstead Ice Creamery & Gelato Bar
+      </h1>
+      
+      <p class="lead" style="margin-inline: auto; max-width: 600px; margin-block-end: var(--space-5);">
+        Slow-churned with 100% grass-fed Jersey cream, unrefined coconut blossom sugar, and farm-foraged seasonal berries. Launching this summer!
+      </p>
+
+      <!-- LIVE COUNTDOWN TIMER (STEP 9.11) -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-3); margin-block: var(--space-6); max-width: 540px; margin-inline: auto;">
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-3); box-shadow: var(--shadow-global);">
+          <div id="timerDays" style="font-family: var(--font-heading); font-size: 2.75rem; font-weight: var(--weight-h1); color: var(--color-primary); line-height: 1;">45</div>
+          <small style="font-size: var(--size-caption); color: var(--color-text-muted); text-transform: uppercase;">Days</small>
+        </div>
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-3); box-shadow: var(--shadow-global);">
+          <div id="timerHours" style="font-family: var(--font-heading); font-size: 2.75rem; font-weight: var(--weight-h1); color: var(--color-primary); line-height: 1;">18</div>
+          <small style="font-size: var(--size-caption); color: var(--color-text-muted); text-transform: uppercase;">Hours</small>
+        </div>
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-3); box-shadow: var(--shadow-global);">
+          <div id="timerMins" style="font-family: var(--font-heading); font-size: 2.75rem; font-weight: var(--weight-h1); color: var(--color-primary); line-height: 1;">34</div>
+          <small style="font-size: var(--size-caption); color: var(--color-text-muted); text-transform: uppercase;">Minutes</small>
+        </div>
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-3); box-shadow: var(--shadow-global);">
+          <div id="timerSecs" style="font-family: var(--font-heading); font-size: 2.75rem; font-weight: var(--weight-h1); color: var(--color-primary); line-height: 1;">52</div>
+          <small style="font-size: var(--size-caption); color: var(--color-text-muted); text-transform: uppercase;">Seconds</small>
+        </div>
+      </div>
+
+      <!-- EMAIL CAPTURE NEWSLETTER FORM -->
+      <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-global); padding: var(--space-5); box-shadow: var(--shadow-global); max-width: 540px; margin-inline: auto;">
+        <h3 style="font-size: 1.25rem; font-weight: var(--weight-h3); margin-block-end: 6px;">Get Early Tasting Access</h3>
+        <p style="font-size: var(--size-caption); color: var(--color-text-muted); margin-block-end: var(--space-3);">Be the first 100 subscribers to receive a complimentary artisan pint on opening day.</p>
+
+        <form data-validate="true" data-success-msg="Success! You are on the VIP tasting guestlist." novalidate>
+          <div class="form-alert-box"></div>
+          <div class="form-group" style="margin-block-end: var(--space-3);">
+            <input type="email" class="form-control" placeholder="Enter your email address" required>
+            <div class="invalid-feedback form-feedback">Please enter a valid email address.</div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <i class="ph-bold ph-envelope"></i> Reserve VIP Spot
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; 2026 Dairy Farm Inc. All rights reserved. Pure Natural & Certified Organic.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

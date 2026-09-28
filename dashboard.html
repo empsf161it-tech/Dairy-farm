@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dairy Farm Management Operations Dashboard</title>
+  <meta name="description" content="Comprehensive dairy farm management dashboard for tracking daily milk yields, livestock health records, pasture feed inventory, and customer deliveries.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231b4332'><path d='M19 13v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6a7 7 0 1 1 14 0z'/></svg>">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body style="min-height: 100vh;">
+
+  <div class="dashboard-layout">
+    
+    <!-- SIDEBAR NAVIGATION -->
+    <aside class="dash-sidebar" aria-label="Dashboard Sidebar">
+      <div class="dash-sidebar-header">
+        <a href="index.html" class="site-logo" style="font-size: 1.25rem;">
+          <span class="logo-icon-wrap" style="width: 34px; height: 34px; font-size: 1.1rem;">
+            <i class="ph-bold ph-drop"></i>
+          </span>
+          Dairy Farm
+        </a>
+      </div>
+
+      <!-- Role Switcher -->
+      <div style="padding: var(--space-3) var(--space-4); border-block-end: 1px solid var(--color-border);">
+        <small style="color: var(--color-text-light); text-transform: uppercase; font-size: 0.75rem; font-weight: bold; display: block; margin-block-end: 6px;">
+          View Perspective
+        </small>
+        <select id="dashRoleSelect" class="form-control" style="padding: 6px 10px; font-size: 0.85rem;">
+          <option value="admin" selected>Admin & Farm Manager</option>
+          <option value="user">Customer / Subscriber</option>
+        </select>
+      </div>
+
+      <!-- ADMIN NAV MENU -->
+      <nav class="dash-nav-menu" id="adminNavGroup">
+        <div style="padding-inline: 12px; margin-block: 8px 4px; font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-light); font-weight: bold;">
+          Farm Operations
+        </div>
+        <a href="#overview" class="dash-nav-item active" data-tab="overview">
+          <i class="ph ph-chart-pie-slice"></i>
+          <span>Overview & KPIs</span>
+        </a>
+        <a href="#milk" class="dash-nav-item" data-tab="milk">
+          <i class="ph ph-drop"></i>
+          <span>Milk Production</span>
+        </a>
+        <a href="#livestock" class="dash-nav-item" data-tab="livestock">
+          <i class="ph ph-paw-print"></i>
+          <span>Livestock Records</span>
+        </a>
+        <a href="#feed" class="dash-nav-item" data-tab="feed">
+          <i class="ph ph-plant"></i>
+          <span>Feed & Silage</span>
+        </a>
+        <a href="#orders" class="dash-nav-item" data-tab="orders">
+          <i class="ph ph-truck"></i>
+          <span>Orders & Routes</span>
+        </a>
+        <a href="#customers" class="dash-nav-item" data-tab="customers">
+          <i class="ph ph-users"></i>
+          <span>Customers / Users</span>
+        </a>
+        <a href="#analytics" class="dash-nav-item" data-tab="analytics">
+          <i class="ph ph-presentation-chart"></i>
+          <span>Reports & IoT Sensors</span>
+        </a>
+        <a href="#settings" class="dash-nav-item" data-tab="settings">
+          <i class="ph ph-gear"></i>
+          <span>Farm Settings</span>
+        </a>
+      </nav>
+
+      <!-- CUSTOMER / USER NAV MENU -->
+      <nav class="dash-nav-menu" id="userNavGroup" style="display: none;">
+        <div style="padding-inline: 12px; margin-block: 8px 4px; font-size: 0.75rem; text-transform: uppercase; color: var(--color-text-light); font-weight: bold;">
+          My Subscriber Portal
+        </div>
+        <a href="#user-orders" class="dash-nav-item" data-tab="user-orders">
+          <i class="ph ph-clock-counter-clockwise"></i>
+          <span>Delivery Schedule</span>
+        </a>
+        <a href="#user-profile" class="dash-nav-item" data-tab="user-profile">
+          <i class="ph ph-user-circle"></i>
+          <span>Profile & Address</span>
+        </a>
+        <a href="#user-saved" class="dash-nav-item" data-tab="user-saved">
+          <i class="ph ph-heart"></i>
+          <span>Saved Products</span>
+        </a>
+        <a href="#user-messages" class="dash-nav-item" data-tab="user-messages">
+          <i class="ph ph-chat-text"></i>
+          <span>Messages & Support</span>
+        </a>
+      </nav>
+
+      <!-- Sidebar Bottom -->
+      <div style="margin-block-start: auto; padding: var(--space-4); border-block-start: 1px solid var(--color-border); display: flex; flex-direction: column; gap: var(--space-2);">
+        <a href="index.html" class="dash-nav-item" style="color: var(--color-primary);">
+          <i class="ph ph-arrow-left"></i>
+          <span>Return to Storefront</span>
+        </a>
+        <a href="login.html" class="dash-nav-item" style="color: var(--color-danger);">
+          <i class="ph ph-sign-out"></i>
+          <span>Logout</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD CONTENT AREA -->
+    <div class="dash-main-area">
+      
+      <!-- Topbar Header -->
+      <header class="dash-topbar">
+        <div style="display: flex; align-items: center; gap: var(--space-3);">
+          <button type="button" class="btn-icon" id="sidebarToggleBtn" aria-label="Toggle Sidebar" style="display: inline-flex;">
+            <i class="ph ph-list"></i>
+          </button>
+          <h2 id="dashViewTitle" style="font-size: 1.35rem; font-weight: var(--weight-h3); margin: 0;">Overview & KPIs</h2>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: var(--space-3);">
+          <!-- Live Realtime Search Filter -->
+          <input type="text" id="dashSearchInput" class="dash-search-input" placeholder="Search batches, cows, orders...">
+
+          <!-- RTL Toggle -->
+          <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL">
+            <i class="ph-bold ph-arrows-left-right"></i>
+          </button>
+
+          <!-- Theme Toggle -->
+          <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+            <i class="ph-bold ph-moon"></i>
+          </button>
+
+          <!-- Quick Action: Log Milk Batch -->
+          <button type="button" class="btn btn-primary" data-open-modal="modalLogMilk" style="padding: 8px 16px; font-size: 0.85rem;">
+            <i class="ph-bold ph-plus"></i> Log Milk Batch
+          </button>
+        </div>
+      </header>
+
+      <!-- CONTENT PANES -->
+      <div class="dash-content">
+        
+        <!-- ====================================================================
+             TAB 1: OVERVIEW & KPIS (DEFAULT ACTIVE)
+             ==================================================================== -->
+        <div class="dash-tab-pane" id="tab-overview" style="display: block;">
+          
+          <!-- Top KPI Cards -->
+          <div class="dash-kpi-grid">
+            <div class="dash-kpi-card">
+              <div class="dash-kpi-icon"><i class="ph ph-drop"></i></div>
+              <div class="dash-kpi-info">
+                <h4>Daily Milk Yield</h4>
+                <div class="dash-kpi-value">1,480 L</div>
+                <small style="color: var(--color-success); font-weight: bold;"><i class="ph ph-arrow-up-right"></i> +6.2% vs yesterday</small>
+              </div>
+            </div>
+
+            <div class="dash-kpi-card">
+              <div class="dash-kpi-icon"><i class="ph ph-paw-print"></i></div>
+              <div class="dash-kpi-info">
+                <h4>Active Herd</h4>
+                <div class="dash-kpi-value">252 Cows</div>
+                <small style="color: var(--color-text-muted);">210 Lactating • 42 Dry</small>
+              </div>
+            </div>
+
+            <div class="dash-kpi-card">
+              <div class="dash-kpi-icon"><i class="ph ph-truck"></i></div>
+              <div class="dash-kpi-info">
+                <h4>Daily Deliveries</h4>
+                <div class="dash-kpi-value">840 Crates</div>
+                <small style="color: var(--color-success); font-weight: bold;">100% on schedule</small>
+              </div>
+            </div>
+
+            <div class="dash-kpi-card">
+              <div class="dash-kpi-icon"><i class="ph ph-thermometer-cold"></i></div>
+              <div class="dash-kpi-info">
+                <h4>Bulk Chilling Temp</h4>
+                <div class="dash-kpi-value">3.6°C</div>
+                <small style="color: var(--color-success); font-weight: bold;">Optimal Cold Chain</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Milk Production Quick Chart & Telemetry -->
+          <div class="dash-card-box">
+            <div class="dash-card-header">
+              <h3 style="font-size: 1.25rem; font-weight: var(--weight-h3); margin: 0;">Weekly Yield Progression (Morning vs Evening)</h3>
+              <span class="badge-status success">IoT Flow Sensor Synchronized</span>
+            </div>
+            
+            <!-- Simulated CSS Bar Chart -->
+            <div style="display: flex; align-items: flex-end; justify-content: space-between; height: 180px; padding-block-start: var(--space-4); border-block-end: 2px solid var(--color-border); gap: 12px;">
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+                <div style="width: 100%; max-width: 44px; height: 110px; background: var(--color-primary); border-radius: 6px 6px 0 0;" title="Mon: 1,390L"></div>
+                <small style="font-size: 0.75rem;">Mon</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+                <div style="width: 100%; max-width: 44px; height: 125px; background: var(--color-primary); border-radius: 6px 6px 0 0;" title="Tue: 1,420L"></div>
+                <small style="font-size: 0.75rem;">Tue</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+                <div style="width: 100%; max-width: 44px; height: 140px; background: var(--color-primary); border-radius: 6px 6px 0 0;" title="Wed: 1,450L"></div>
+                <small style="font-size: 0.75rem;">Wed</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+                <div style="width: 100%; max-width: 44px; height: 132px; background: var(--color-primary); border-radius: 6px 6px 0 0;" title="Thu: 1,435L"></div>
+                <small style="font-size: 0.75rem;">Thu</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+                <div style="width: 100%; max-width: 44px; height: 155px; background: var(--color-primary); border-radius: 6px 6px 0 0;" title="Fri: 1,490L"></div>
+                <small style="font-size: 0.75rem;">Fri</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+                <div style="width: 100%; max-width: 44px; height: 148px; background: var(--color-primary); border-radius: 6px 6px 0 0;" title="Sat: 1,470L"></div>
+                <small style="font-size: 0.75rem;">Sat</small>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; gap: 6px; flex: 1;">
+                <div style="width: 100%; max-width: 44px; height: 160px; background: var(--color-accent); border-radius: 6px 6px 0 0;" title="Sun: 1,510L"></div>
+                <small style="font-size: 0.75rem; font-weight: bold; color: var(--color-primary);">Today</small>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Milking Batches Table -->
+          <div class="dash-card-box">
+            <div class="dash-card-header">
+              <h3 style="font-size: 1.25rem; font-weight: var(--weight-h3); margin: 0;">Today's Milking Logs & Laboratory Quality</h3>
+              <button class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.8rem;" onclick="alert('Exporting verified batch report to CSV...')">
+                <i class="ph ph-file-csv"></i> Export CSV
+              </button>
+            </div>
+            
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Batch ID</th>
+                    <th>Morning Session</th>
+                    <th>Evening Session</th>
+                    <th>Total Yield</th>
+                    <th>Fat Content</th>
+                    <th>Vat Silo ID</th>
+                    <th>Quality Status</th>
+                  </tr>
+                </thead>
+                <tbody id="milkBatchTableBody">
+                  <tr>
+                    <td><strong>#BATCH-842 (A2 Gir)</strong></td>
+                    <td>420 L</td>
+                    <td>380 L</td>
+                    <td><strong>800.0 L</strong></td>
+                    <td>4.75%</td>
+                    <td>SILO-A (North)</td>
+                    <td><span class="badge-status success">Chilled & Verified</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#BATCH-841 (Jersey Pasture)</strong></td>
+                    <td>360 L</td>
+                    <td>320 L</td>
+                    <td><strong>680.0 L</strong></td>
+                    <td>5.10%</td>
+                    <td>SILO-B (East)</td>
+                    <td><span class="badge-status success">Chilled & Verified</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#BATCH-840 (Holstein Whole)</strong></td>
+                    <td>510 L</td>
+                    <td>490 L</td>
+                    <td><strong>1,000.0 L</strong></td>
+                    <td>3.95%</td>
+                    <td>SILO-C (Central)</td>
+                    <td><span class="badge-status success">Bottled & Dispatched</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             TAB 2: MILK PRODUCTION DETAILS
+             ==================================================================== -->
+        <div class="dash-tab-pane" id="tab-milk" style="display: none;">
+          <div class="dash-card-box">
+            <div class="dash-card-header">
+              <h3 style="font-size: 1.25rem; font-weight: var(--weight-h3); margin: 0;">Comprehensive Bulk Milk Yield Archives</h3>
+              <button class="btn btn-primary" data-open-modal="modalLogMilk">
+                <i class="ph-bold ph-plus"></i> New Batch Entry
+              </button>
+            </div>
+            <p style="color: var(--color-text-muted); font-size: var(--size-label);">Automated real-time integration from 24-station electronic milking parlor flowmeters.</p>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Date & Time</th>
+                    <th>Herd Paddock</th>
+                    <th>Cows Milked</th>
+                    <th>Volume (L)</th>
+                    <th>Protein %</th>
+                    <th>SNF Solids %</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>2026-09-28 05:30 AM</td>
+                    <td>Paddock #3 (Alfalfa Meadow)</td>
+                    <td>115 Head (Gir)</td>
+                    <td>800 L</td>
+                    <td>3.6%</td>
+                    <td>8.85%</td>
+                    <td><span class="badge-status success">Approved</span></td>
+                  </tr>
+                  <tr>
+                    <td>2026-09-27 05:30 PM</td>
+                    <td>Paddock #1 (Clover Valley)</td>
+                    <td>82 Head (Jersey)</td>
+                    <td>680 L</td>
+                    <td>3.8%</td>
+                    <td>9.15%</td>
+                    <td><span class="badge-status success">Approved</span></td>
+                  </tr>
+                  <tr>
+                    <td>2026-09-27 05:30 AM</td>
+                    <td>Paddock #2 (Rye Grass Flat)</td>
+                    <td>55 Head (Holstein)</td>
+                    <td>1,000 L</td>
+                    <td>3.3%</td>
+                    <td>8.60%</td>
+                    <td><span class="badge-status success">Approved</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             TAB 3: LIVESTOCK RECORDS & VET TELEMETRY
+             ==================================================================== -->
+        <div class="dash-tab-pane" id="tab-livestock" style="display: none;">
+          <div class="dash-card-box">
+            <div class="dash-card-header">
+              <h3 style="font-size: 1.25rem; font-weight: var(--weight-h3); margin: 0;">Individual Cattle Registry & Health Records</h3>
+              <button class="btn btn-primary" data-open-modal="modalAddLivestock">
+                <i class="ph-bold ph-plus"></i> Register Livestock
+              </button>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Tag ID & RFID</th>
+                    <th>Breed</th>
+                    <th>Age</th>
+                    <th>Avg Daily Yield</th>
+                    <th>Health Index</th>
+                    <th>Vaccinations</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="livestockTableBody">
+                  <tr>
+                    <td><strong>GIR-104 (Nandini)</strong></td>
+                    <td>Indigenous Gir (A2)</td>
+                    <td>4.2 yrs</td>
+                    <td>16.5 L/day</td>
+                    <td><span class="badge-status success">Excellent (98%)</span></td>
+                    <td><span class="badge-status success">Up to date</span></td>
+                    <td><button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.8rem;">Details</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>JER-208 (Bella)</strong></td>
+                    <td>Purebred Jersey</td>
+                    <td>3.8 yrs</td>
+                    <td>19.0 L/day</td>
+                    <td><span class="badge-status success">Optimal (95%)</span></td>
+                    <td><span class="badge-status success">Up to date</span></td>
+                    <td><button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.8rem;">Details</button></td>
+                  </tr>
+                  <tr>
+                    <td><strong>HOL-301 (Luna)</strong></td>
+                    <td>Holstein Friesian</td>
+                    <td>5.0 yrs</td>
+                    <td>26.2 L/day</td>
+                    <td><span class="badge-status warning">Observation (Rumen)</span></td>
+                    <td><span class="badge-status success">Up to date</span></td>
+                    <td><button class="btn btn-secondary" style="padding: 4px 10px; font-size: 0.8rem;">Details</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             TAB 4: FEED & SILAGE INVENTORY
+             ==================================================================== -->
+        <div class="dash-tab-pane" id="tab-feed" style="display: none;">
+          <div class="dash-card-box">
+            <div class="dash-card-header">
+              <h3 style="font-size: 1.25rem; font-weight: var(--weight-h3); margin: 0;">Organic Feed Stock & Pasture Biomass Levels</h3>
+              <button class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.8rem;">Order Feed Restock</button>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Feed Variety</th>
+                    <th>Current Stock</th>
+                    <th>Daily Consumption</th>
+                    <th>Days Remaining</th>
+                    <th>Nutritional Quality</th>
+                    <th>Stock Alert</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Organic Sun-Cured Alfalfa Hay</strong></td>
+                    <td>42 Tons</td>
+                    <td>1.8 Tons/day</td>
+                    <td>23 Days</td>
+                    <td>21% Crude Protein</td>
+                    <td><span class="badge-status success">Healthy</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fermented Corn & Meadow Silage</strong></td>
+                    <td>65 Tons</td>
+                    <td>2.5 Tons/day</td>
+                    <td>26 Days</td>
+                    <td>Optimal Rumen pH</td>
+                    <td><span class="badge-status success">Healthy</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Medicinal Mineral Salt Blocks</strong></td>
+                    <td>14 Units</td>
+                    <td>0.5 Units/day</td>
+                    <td>28 Days</td>
+                    <td>Trace Selenium & Zinc</td>
+                    <td><span class="badge-status success">Healthy</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             TAB 5: ORDERS & ROUTE DISPATCH
+             ==================================================================== -->
+        <div class="dash-tab-pane" id="tab-orders" style="display: none;">
+          <div class="dash-card-box">
+            <div class="dash-card-header">
+              <h3 style="font-size: 1.25rem; font-weight: var(--weight-h3); margin: 0;">Morning Doorstep Delivery Routes</h3>
+              <span class="badge-status success">Route Fleet Active</span>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Route Code</th>
+                    <th>Driver / Van</th>
+                    <th>Delivery Area</th>
+                    <th>Subscribers</th>
+                    <th>Dispatched Bottles</th>
+                    <th>Completion Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>ROUTE-NORTH-01</strong></td>
+                    <td>David Miller (Van #4)</td>
+                    <td>Verdant Valley Ridge & Glen</td>
+                    <td>185 Homes</td>
+                    <td>380 Bottles</td>
+                    <td><span class="badge-status success">Completed (06:20 AM)</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>ROUTE-CENTRAL-02</strong></td>
+                    <td>Sarah Jenkins (Van #2)</td>
+                    <td>Downtown & Arts District</td>
+                    <td>210 Homes</td>
+                    <td>425 Bottles</td>
+                    <td><span class="badge-status success">Completed (06:45 AM)</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>ROUTE-SOUTH-03</strong></td>
+                    <td>Marcus Thorne (Van #7)</td>
+                    <td>Meadowview Suburbs</td>
+                    <td>190 Homes</td>
+                    <td>395 Bottles</td>
+                    <td><span class="badge-status success">Completed (06:55 AM)</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             TAB 6: CUSTOMERS & SUBSCRIBERS
+             ==================================================================== -->
+        <div class="dash-tab-pane" id="tab-customers" style="display: none;">
+          <div class="dash-card-box">
+            <div class="dash-card-header">
+              <h3 style="font-size: 1.25rem; font-weight: var(--weight-h3); margin: 0;">Registered Subscribers Directory</h3>
+              <button class="btn btn-primary" style="padding: 6px 14px; font-size: 0.8rem;">Add Customer</button>
+            </div>
+            <div class="dash-table-wrap">
+              <table class="dash-table">
+                <thead>
+                  <tr>
+                    <th>Customer Name</th>
+                    <th>Active Plan</th>
+                    <th>Daily Quota</th>
+                    <th>Delivery Schedule</th>
+                    <th>Account Balance</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Eleanor Vance</strong></td>
+                    <td>A2 Wellness Reserve</td>
+                    <td>2 Liters</td>
+                    <td>Daily 06:00 AM</td>
+                    <td>+$155.00</td>
+                    <td><span class="badge-status success">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Marcus Sterling (Head Chef)</strong></td>
+                    <td>Commercial Wholesale</td>
+                    <td>25 Liters + Butter</td>
+                    <td>Mon, Wed, Fri</td>
+                    <td>+$840.00</td>
+                    <td><span class="badge-status success">Active</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dr. Sarah Al-Mansoor</strong></td>
+                    <td>Family Fresh Plan</td>
+                    <td>1 Liter</td>
+                    <td>Daily 06:30 AM</td>
+                    <td>+$89.00</td>
+                    <td><span class="badge-status success">Active</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             TAB 7: IOT SENSORS & ANALYTICS
+             ==================================================================== -->
+        <div class="dash-tab-pane" id="tab-analytics" style="display: none;">
+          <div class="dash-kpi-grid">
+            <div class="dash-kpi-card">
+              <div class="dash-kpi-icon"><i class="ph ph-thermometer"></i></div>
+              <div class="dash-kpi-info">
+                <h4>Pasteurizer Temp</h4>
+                <div class="dash-kpi-value">72.5°C</div>
+                <small style="color: var(--color-success);">Flash 15 sec protocol</small>
+              </div>
+            </div>
+            <div class="dash-kpi-card">
+              <div class="dash-kpi-icon"><i class="ph ph-sun"></i></div>
+              <div class="dash-kpi-info">
+                <h4>Solar Generation</h4>
+                <div class="dash-kpi-value">284 kWh</div>
+                <small style="color: var(--color-success);">100% Net Zero</small>
+              </div>
+            </div>
+            <div class="dash-kpi-card">
+              <div class="dash-kpi-icon"><i class="ph ph-water"></i></div>
+              <div class="dash-kpi-info">
+                <h4>Water Consumption</h4>
+                <div class="dash-kpi-value">4,200 L</div>
+                <small style="color: var(--color-text-muted);">Pasture well sourced</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ====================================================================
+             TAB 8: USER / SUBSCRIBER PERSPECTIVE
+             ==================================================================== -->
+        <div class="dash-tab-pane" id="tab-user-orders" style="display: none;">
+          <div class="dash-card-box">
+            <div class="dash-card-header">
+              <h3 style="font-size: 1.25rem; font-weight: var(--weight-h3); margin: 0;">My Active Morning Milk Subscription</h3>
+              <button class="btn btn-secondary" style="padding: 6px 14px; font-size: 0.8rem;" onclick="alert('Delivery paused for tomorrow. Enjoy your day!')">
+                <i class="ph ph-pause"></i> Pause Tomorrow
+              </button>
+            </div>
+            <p><strong>Plan:</strong> A2 Vedic Gir Herd Milk (2 Liters Daily)</p>
+            <p><strong>Delivery Location:</strong> 142 Meadow Lane, Insulated Cooler Box at Doorstep</p>
+            <p><strong>Next Dispatch:</strong> Tomorrow at 06:15 AM (Fresh Batch #843)</p>
+            <div class="card-footer" style="align-items: flex-start; margin-block-start: var(--space-4);">
+              <a href="services.html" class="btn btn-primary">Upgrade Plan</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODALS: 
+       1. Log Milk Batch Modal
+       2. Register Livestock Modal
+       ========================================================================== -->
+  
+  <!-- Log Milk Batch Modal -->
+  <div class="modal-overlay" id="modalLogMilk">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="margin: 0; font-size: 1.25rem; font-weight: var(--weight-h3);">Log Today's Milk Batch</h3>
+        <button type="button" class="btn-icon" data-close-modal aria-label="Close Modal">
+          <i class="ph ph-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="formLogMilk">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="form-group">
+              <label class="form-label" for="milkMorning">Morning Yield (Liters)</label>
+              <input type="number" step="0.5" id="milkMorning" class="form-control" value="430" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="milkEvening">Evening Yield (Liters)</label>
+              <input type="number" step="0.5" id="milkEvening" class="form-control" value="390" required>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="form-group">
+              <label class="form-label" for="milkFat">Butterfat Content (%)</label>
+              <input type="number" step="0.05" id="milkFat" class="form-control" value="4.80" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="milkTank">Silo Storage Tank</label>
+              <select id="milkTank" class="form-control">
+                <option value="SILO-A (North)">SILO-A (North Bulk)</option>
+                <option value="SILO-B (East)">SILO-B (East A2 Vat)</option>
+                <option value="SILO-C (Central)">SILO-C (Central Whole)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-block-start: var(--space-3);">
+            <i class="ph-bold ph-check"></i> Record & Verify Batch
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Register Livestock Modal -->
+  <div class="modal-overlay" id="modalAddLivestock">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="margin: 0; font-size: 1.25rem; font-weight: var(--weight-h3);">Add New Livestock Record</h3>
+        <button type="button" class="btn-icon" data-close-modal aria-label="Close Modal">
+          <i class="ph ph-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="formAddLivestock">
+          <div class="form-group">
+            <label class="form-label" for="cattleTagId">Tag ID / RFID Number</label>
+            <input type="text" id="cattleTagId" class="form-control" placeholder="GIR-105 (Lakshmi)" required>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="form-group">
+              <label class="form-label" for="cattleBreed">Breed</label>
+              <select id="cattleBreed" class="form-control">
+                <option value="Indigenous Gir (A2)">Indigenous Gir (A2)</option>
+                <option value="Purebred Jersey">Purebred Jersey</option>
+                <option value="Holstein Friesian">Holstein Friesian</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cattleAge">Age</label>
+              <input type="text" id="cattleAge" class="form-control" placeholder="3.5 yrs" required>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-3);">
+            <div class="form-group">
+              <label class="form-label" for="cattleYield">Avg Daily Yield (L)</label>
+              <input type="number" step="0.5" id="cattleYield" class="form-control" value="18.5" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="cattleHealth">Health Status</label>
+              <select id="cattleHealth" class="form-control">
+                <option value="Excellent (98%)">Excellent (98%)</option>
+                <option value="Optimal (94%)">Optimal (94%)</option>
+                <option value="Observation">Observation</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-block-start: var(--space-3);">
+            <i class="ph-bold ph-plus"></i> Save Cattle Record
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

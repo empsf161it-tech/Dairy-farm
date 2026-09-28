@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dairy Farm Services & Milk Subscriptions</title>
+  <meta name="description" content="Explore our flexible dairy doorstep subscriptions, farm-to-bistro wholesale supplies, agro-tourism workshops, and ethical livestock adoption programs.">
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231b4332'><path d='M19 13v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-6a7 7 0 1 1 14 0z'/></svg>">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+        Dairy Farm
+      </a>
+
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="home2.html" class="nav-link">Home 2</a>
+        <a href="services.html" class="nav-link active">Services</a>
+        <a href="index.html#products" class="nav-link">Products</a>
+        <a href="index.html#livestock" class="nav-link">Livestock</a>
+        <a href="blog.html" class="nav-link">Blog</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="dashboard.html" class="nav-link">Dashboard</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL">
+          <i class="ph-bold ph-arrows-left-right"></i>
+        </button>
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <i class="ph-bold ph-moon"></i>
+        </button>
+        <a href="login.html" class="btn btn-primary" id="headerLoginBtn">Login</a>
+        <button type="button" class="hamburger-btn" aria-label="Open Mobile Menu">
+          <i class="ph-bold ph-list"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="site-logo">
+        <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+        Dairy Farm
+      </a>
+      <button type="button" class="drawer-close-btn" aria-label="Close Menu">
+        <i class="ph-bold ph-x"></i>
+      </button>
+    </div>
+
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link"><i class="ph ph-house"></i> Home</a>
+      <a href="home2.html" class="mobile-nav-link"><i class="ph ph-sparkle"></i> Home 2</a>
+      <a href="services.html" class="mobile-nav-link active"><i class="ph ph-gear"></i> Services</a>
+      <a href="index.html#products" class="mobile-nav-link"><i class="ph ph-shopping-bag"></i> Products</a>
+      <a href="index.html#livestock" class="mobile-nav-link"><i class="ph ph-paw-print"></i> Livestock</a>
+      <a href="blog.html" class="mobile-nav-link"><i class="ph ph-newspaper"></i> Blog</a>
+      <a href="contact.html" class="mobile-nav-link"><i class="ph ph-envelope-simple"></i> Contact</a>
+      <a href="dashboard.html" class="mobile-nav-link"><i class="ph ph-chart-pie-slice"></i> Dashboard</a>
+    </nav>
+
+    <div class="drawer-footer-actions">
+      <div class="drawer-toggle-row">
+        <span>Dark Mode</span>
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark Mode">
+          <i class="ph-bold ph-moon"></i>
+        </button>
+      </div>
+      <div class="drawer-toggle-row">
+        <span>RTL Layout</span>
+        <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction">
+          <i class="ph-bold ph-arrows-left-right"></i>
+        </button>
+      </div>
+      <a href="login.html" class="btn btn-primary" style="width: 100%;">Login</a>
+    </div>
+  </aside>
+
+  <main>
+    <!-- PAGE HERO -->
+    <section class="hero-section" style="padding-block: var(--space-7); text-align: center;">
+      <div class="container" style="max-width: 820px;">
+        <span class="section-badge"><i class="ph-bold ph-hand-heart"></i> Comprehensive Farm Solutions</span>
+        <h1 style="font-size: var(--size-h1); font-weight: var(--weight-h1); margin-block: var(--space-2);">
+          Pasture Services & Dairy Subscriptions
+        </h1>
+        <p class="lead">
+          From sunrise chilled glass bottle deliveries to custom restaurant dairy batches, our agro-artisan services bring unadulterated pasture goodness directly into your life.
+        </p>
+      </div>
+    </section>
+
+    <!-- CORE SERVICES CARDS (STEP 9.3 & 3) -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">What We Offer</span>
+          <h2 class="section-title">Farm-to-Door Service Offerings</h2>
+          <p class="section-subtext">Each service is managed with cold-chain telemetry, certified bio-security, and guaranteed zero adulteration.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-truck"></i></div>
+            <h3 class="card-title">Daily Doorstep Milk Delivery</h3>
+            <p class="card-text">Delivered every single morning in hermetically sealed reusable glass bottles. Manage vacation holds or extra bottle orders anytime via our client portal.</p>
+            <div class="card-footer">
+              <a href="#pricing" class="btn btn-primary">Subscribe Now</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-cooking-pot"></i></div>
+            <h3 class="card-title">Artisanal Butter & Ghee Processing</h3>
+            <p class="card-text">Traditional Vedic bilona churning and curd culture in small batch brass cauldrons, yielding exceptional aroma and digestible short-chain fatty acids.</p>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-secondary">Order Artisanal</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-storefront"></i></div>
+            <h3 class="card-title">Wholesale & Culinary Sourcing</h3>
+            <p class="card-text">Specialty milkfat grades tailored for baristas, cheese makers, and pastry chefs. Consistent solids, non-homogenized texture, and reliable scheduled freight.</p>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-secondary">B2B Inquiries</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-users-three"></i></div>
+            <h3 class="card-title">Pasture Tours & Agro-Workshops</h3>
+            <p class="card-text">Guided educational visits for schools and families. Learn pasture stewardship, watch hygienic automated milking, and churn your own farmhouse butter.</p>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-secondary">Book a Tour</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-heart"></i></div>
+            <h3 class="card-title">Adopt-A-Cow Wellness Program</h3>
+            <p class="card-text">Sponsor an indigenous Gir or Jersey cow. Receive dedicated weekly milk shipments, digital biometric health updates, and VIP pasture visiting privileges.</p>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-secondary">Learn Adoption</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-thermometer-simple"></i></div>
+            <h3 class="card-title">Refrigerated Cold-Chain Logistics</h3>
+            <p class="card-text">Our proprietary insulated dispatch vehicles maintain temperature between 2°C and 4°C with real-time IoT temperature logging on every transport crate.</p>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-secondary">Logistics Details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIPTION PLANS PRICING TABLE (STEP 9.3) -->
+    <section class="section-padding" id="pricing" style="background: var(--color-surface); border-block: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Flexible Subscriptions</span>
+          <h2 class="section-title">Transparent Doorstep Pricing</h2>
+          <p class="section-subtext">No long-term commitments. Pause, resume, or modify your daily quantities anytime with a single click.</p>
+        </div>
+
+        <div class="card-grid">
+          <!-- Tier 1 -->
+          <div class="card" style="position: relative;">
+            <div class="card-icon"><i class="ph ph-drop"></i></div>
+            <h3 class="card-title">Family Fresh</h3>
+            <div style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: var(--weight-h1); color: var(--color-primary); margin-block: var(--space-2);">
+              $89 <small style="font-size: 0.9rem; color: var(--color-text-muted);">/ month</small>
+            </div>
+            <p class="card-text" style="margin-block-end: var(--space-4);">Ideal for individuals and small households seeking daily whole milk freshness.</p>
+            <ul style="list-style: none; text-align: left; width: 100%; margin-block-end: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--size-label);">
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> 1 Liter Pasture Milk Daily</li>
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> Delivered before 7:00 AM</li>
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> Reusable Sanitized Glass Bottles</li>
+              <li style="color: var(--color-text-light); text-decoration: line-through;"><i class="ph ph-x"></i> A2 Vedic Gir Herd Milk</li>
+              <li style="color: var(--color-text-light); text-decoration: line-through;"><i class="ph ph-x"></i> Monthly Cultured Butter Pack</li>
+            </ul>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Select Family Plan</a>
+            </div>
+          </div>
+
+          <!-- Tier 2 (Highlighted) -->
+          <div class="card" style="border: 2px solid var(--color-primary); position: relative;">
+            <span class="product-badge" style="background: var(--color-primary);">Most Popular</span>
+            <div class="card-icon" style="background: var(--color-primary); color: #fff;"><i class="ph ph-crown"></i></div>
+            <h3 class="card-title">A2 Wellness Reserve</h3>
+            <div style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: var(--weight-h1); color: var(--color-primary); margin-block: var(--space-2);">
+              $155 <small style="font-size: 0.9rem; color: var(--color-text-muted);">/ month</small>
+            </div>
+            <p class="card-text" style="margin-block-end: var(--space-4);">Pure indigenous Gir cow A2 milk packed with easy-to-digest native protein.</p>
+            <ul style="list-style: none; text-align: left; width: 100%; margin-block-end: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--size-label);">
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> 2 Liters Certified A2 Milk Daily</li>
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> Delivered before 6:30 AM</li>
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> Free Doorstep Chilled Insulated Box</li>
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> 1x Free 500g Greek Curd Weekly</li>
+              <li style="color: var(--color-text-light); text-decoration: line-through;"><i class="ph ph-x"></i> Complimentary Farm Tour Pass</li>
+            </ul>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-primary" style="width: 100%;">Start A2 Reserve</a>
+            </div>
+          </div>
+
+          <!-- Tier 3 -->
+          <div class="card">
+            <div class="card-icon"><i class="ph ph-sparkle"></i></div>
+            <h3 class="card-title">Farmstead Connoisseur</h3>
+            <div style="font-family: var(--font-heading); font-size: 2.5rem; font-weight: var(--weight-h1); color: var(--color-primary); margin-block: var(--space-2);">
+              $245 <small style="font-size: 0.9rem; color: var(--color-text-muted);">/ month</small>
+            </div>
+            <p class="card-text" style="margin-block-end: var(--space-4);">The complete holistic farm experience for culinary lovers and growing families.</p>
+            <ul style="list-style: none; text-align: left; width: 100%; margin-block-end: var(--space-5); display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--size-label);">
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> 3 Liters Choice Milk Daily</li>
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> Weekly Cultured Butter (250g)</li>
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> Monthly Traditional Bilona Ghee (500ml)</li>
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> VIP Family Farm Pass (4 visits/yr)</li>
+              <li><i class="ph-bold ph-check" style="color: var(--color-primary);"></i> Dedicated Priority Farm Concierge</li>
+            </ul>
+            <div class="card-footer">
+              <a href="contact.html" class="btn btn-secondary" style="width: 100%;">Choose Connoisseur</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="container section-padding">
+      <div class="cta-banner">
+        <h2>Need Custom Dairy Supplies for Your Business?</h2>
+        <p>Talk to our master herdsman and logistics team to set up recurring wholesale milk, butterfat, or aged cheese orders.</p>
+        <div class="cta-btn-group">
+          <a href="contact.html" class="btn btn-accent" style="color: #ffffff;">Request Wholesale Quote</a>
+          <a href="index.html" class="btn btn-secondary" style="border-color: #ffffff; color: #ffffff;">Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="site-logo" style="margin-block-end: var(--space-3);">
+            <span class="logo-icon-wrap"><i class="ph-bold ph-drop"></i></span>
+            Dairy Farm
+          </a>
+          <p style="font-size: var(--size-caption); max-width: 320px;">
+            Cultivating certified organic pastures and harvesting wholesome grass-fed milk with love, transparency, and sustainable soil stewardship since 1982.
+          </p>
+          <div class="footer-social-row">
+            <a href="#" class="btn-icon" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="#" class="btn-icon" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="#" class="btn-icon" aria-label="Youtube"><i class="ph ph-youtube-logo"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="home2.html">Home 2</a></li>
+            <li><a href="services.html">Services & Subscriptions</a></li>
+            <li><a href="about.html">About Our Herd</a></li>
+            <li><a href="blog.html">Dairy Journal</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="contact.html">Visit Pastures</a></li>
+            <li><a href="dashboard.html">Farm Dashboard</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Create Account</a></li>
+            <li><a href="coming-soon.html">Upcoming Ice Creamery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-col-title">Pasture Headquarters</h4>
+          <p style="font-size: var(--size-caption); margin-block-end: 8px;">
+            <i class="ph ph-map-pin"></i> 742 Green Meadow Pasture Rd, CA 95420
+          </p>
+          <p style="font-size: var(--size-caption); margin-block-end: 8px;">
+            <i class="ph ph-phone"></i> +1 (800) 555-MILK (6455)
+          </p>
+          <p style="font-size: var(--size-caption);">
+            <i class="ph ph-envelope-simple"></i> orders@dairyfarm-pastures.com
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright-text">
+          &copy; 2026 Dairy Farm Inc. All rights reserved. Pure Natural & Certified Organic.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
