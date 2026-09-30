@@ -1,4 +1,4 @@
-﻿/**
+/**
  * DAIRY FARM - MAIN JAVASCRIPT
  * Handles Navigation, Theme Toggle, RTL Toggle, Form Validation, Animations, and Interactive Elements
  */
@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 8. COMING SOON COUNTDOWN (IF ON PAGE)
   initCountdown();
+
+  // 9. BACK TO TOP BUTTON
+  initBackToTop();
 });
 
 /* ==========================================================================
@@ -420,3 +423,22 @@ function initCountdown() {
     });
   }
 
+
+
+  /* ==========================================================================
+     BACK TO TOP BUTTON
+     ========================================================================== */
+  function initBackToTop() {
+    const btn = document.getElementById('backToTopBtn');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        btn.classList.add('visible');
+      } else {
+        btn.classList.remove('visible');
+      }
+    }, { passive: true });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
