@@ -1,4 +1,4 @@
-/**
+﻿/**
  * DAIRY FARM - MAIN JAVASCRIPT
  * Handles Navigation, Theme Toggle, RTL Toggle, Form Validation, Animations, and Interactive Elements
  */
@@ -75,7 +75,7 @@ function applyTheme(theme) {
 /* ==========================================================================
    2. RTL INITIALIZATION & TOGGLE (STEP 5)
    - Toggles dir="rtl" on <html> and .rtl on <body>
-   - Icon: Phosphor arrows-left-right ⇄
+   - Icon: Phosphor arrows-left-right â‡„
    ========================================================================== */
 function initRTL() {
   const savedDir = localStorage.getItem('dairy_dir');
@@ -90,16 +90,21 @@ function initRTL() {
   const rtlButtons = document.querySelectorAll('.rtl-toggle-btn');
   rtlButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-      const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
-      const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
-
-      document.documentElement.setAttribute('dir', newDir);
-      if (newDir === 'rtl') {
-        document.body.classList.add('rtl');
-      } else {
-        document.body.classList.remove('rtl');
-      }
-      localStorage.setItem('dairy_dir', newDir);
+      document.body.classList.add('no-transition');
+        const currentDir = document.documentElement.getAttribute('dir') || 'ltr';
+        const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+  
+        document.documentElement.setAttribute('dir', newDir);
+        if (newDir === 'rtl') {
+          document.body.classList.add('rtl');
+        } else {
+          document.body.classList.remove('rtl');
+        }
+        localStorage.setItem('dairy_dir', newDir);
+        
+        setTimeout(() => {
+          document.body.classList.remove('no-transition');
+        }, 10);
     });
   });
 }
@@ -389,3 +394,29 @@ function initCountdown() {
     setInterval(update, 1000);
   }
 }
+
+
+  /* ==========================================================================
+     PASSWORD TOGGLE
+     ========================================================================== */
+  function initPasswordToggle() {
+    const toggleBtns = document.querySelectorAll(".password-toggle-btn");
+    toggleBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const input = btn.previousElementSibling;
+        const icon = btn.querySelector("i");
+        if (input && input.tagName === "INPUT") {
+          if (input.type === "password") {
+            input.type = "text";
+            icon.classList.remove("ph-eye");
+            icon.classList.add("ph-eye-slash");
+          } else {
+            input.type = "password";
+            icon.classList.remove("ph-eye-slash");
+            icon.classList.add("ph-eye");
+          }
+        }
+      });
+    });
+  }
+

@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    DAIRY FARM - DESIGN SYSTEM & MASTER STYLESHEET
    Aesthetic: Organic-Refined Agritech & Pure Dairy Artisan
    ========================================================================== */
@@ -668,6 +668,7 @@ img {
 
 .hero-text {
   text-align: left;
+  max-width: 100%;
 }
 
 .hero-text .section-badge {
@@ -677,6 +678,8 @@ img {
 .hero-title {
   animation: heroSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
   will-change: transform, opacity;
+  white-space: normal !important;
+  word-break: break-word;
 }
 
 .hero-subtitle {
@@ -686,12 +689,15 @@ img {
   margin-block-end: var(--space-5);
   animation: heroSlideUp 0.8s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
   will-change: transform, opacity;
+  white-space: normal !important;
+  word-break: break-word;
 }
 
 .hero-btn-group {
   display: flex;
   align-items: center;
   gap: var(--space-3);
+  flex-wrap: wrap;
   animation: heroSlideUp 0.8s 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
   will-change: transform, opacity;
 }
@@ -1632,6 +1638,35 @@ img {
   overflow-y: auto;
 }
 
+
+/* Calculator Grid (Home 2) */
+.calc-grid {
+  background: var(--color-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-global);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-global);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+
+/* Contact Page Grids */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--space-6);
+  align-items: start;
+}
+
+.form-row-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+}
+
 /* ==========================================================================
    18. RESPONSIVE BREAKPOINTS (STEP 7)
    ========================================================================== */
@@ -1643,21 +1678,23 @@ img {
   }
 }
 
-/* Desktop — Full Horizontal Navbar */
+/* Desktop â€” Full Horizontal Navbar */
 @media (min-width: 1025px) and (max-width: 1439px) {
   .nav-desktop {
     gap: var(--space-3);
   }
 }
 
-/* Tablet + Mobile — Hamburger Starts HERE (<= 1024px) */
+/* Tablet + Mobile â€” Hamburger Starts HERE (<= 1024px) */
 @media (max-width: 1024px) {
   .nav-desktop {
     display: none; /* Hidden on <= 1024px */
   }
 
-  .header-actions .theme-toggle-btn {
-    display: none; /* Step 6: Hidden from header on <= 1024px, placed INSIDE hamburger drawer only */
+  .header-actions .theme-toggle-btn,
+  .header-actions .rtl-toggle-btn,
+  .header-actions #headerLoginBtn {
+    display: none;
   }
 
   .hamburger-btn {
@@ -1670,9 +1707,12 @@ img {
     --size-h3: 1.85rem;
   }
 
-  .hero-content-wrap {
+  
+
+  
+
+  .contact-grid {
     grid-template-columns: 1fr;
-    text-align: center;
   }
 
   .hero-text {
@@ -1741,6 +1781,36 @@ img {
   }
 }
 
+
+  /* Mobile Layout Fixes (Moved from 360px) */
+  .form-row-grid {
+    grid-template-columns: 1fr;
+  }
+  .dash-topbar {
+    height: auto;
+    min-height: 72px;
+    padding-block: var(--space-4);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+  .dash-topbar > div:last-child {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .dash-search-input {
+    flex: 1 1 100%;
+    max-width: 100%;
+    order: 2;
+    margin-top: var(--space-2);
+  }
+  .dash-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-3);
+  }
+
+
 /* Small Mobile (<= 360px) */
 @media (max-width: 360px) {
   :root {
@@ -1756,10 +1826,6 @@ img {
     max-width: 100vw;
   }
 
-  .hero-btn-group {
-    flex-direction: column;
-    width: 100%;
-  }
 
   .btn {
     width: 100%;
@@ -1771,3 +1837,28 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Utility for theme/rtl toggling */
+.no-transition * {
+  transition: none !important;
+}
+
+
+/* FAQ ACCORDION */
+.faq-body {
+  display: none;
+}
+.faq-item.active .faq-body {
+  display: block;
+}
+.faq-item.active .ph-caret-down {
+  transform: rotate(180deg);
+}
+
+
+
+
+
+
+
