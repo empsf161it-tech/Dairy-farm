@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -14,8 +14,17 @@
 </head>
 <body style="margin: 0; padding: 0; overflow-y: auto;">
 
+  <!-- Floating Action Buttons (Theme & RTL) -->
+  <div style="position: fixed; top: var(--space-4); inset-inline-end: var(--space-4); display: flex; gap: var(--space-2); z-index: 99;">
+    <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL">
+      <i class="ph-bold ph-arrows-left-right"></i>
+    </button>
+    <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+      <i class="ph-bold ph-moon"></i>
+    </button>
+  </div>
+
   <!-- Centered layout - Vertically and horizontally -->
-  <!-- NO theme toggle | NO back-to-home button (Step 9.8) -->
   <div class="auth-page-wrapper">
     <div class="auth-card" style="max-width: 480px;">
       

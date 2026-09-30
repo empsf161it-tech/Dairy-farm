@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
-<body style="margin: 0; padding: 0; overflow: hidden;">
+<body style="margin: 0; padding: 0; overflow-y: auto;">
   <!-- Floating Action Buttons -->
   <div style="position: absolute; top: var(--space-4); inset-inline-end: var(--space-4); display: flex; gap: var(--space-2); z-index: 99;">
     <button type="button" class="btn-icon rtl-toggle-btn" aria-label="Toggle RTL Direction" title="Toggle RTL">
@@ -50,16 +50,22 @@
         </div>
 
         <div class="form-group">
-          <div class="form-label">
-            <label for="password">Password <span class="required-star">*</span></label>
-            <a href="#" style="font-size: var(--size-caption); color: var(--color-primary); text-decoration: underline;">Forgot?</a>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-block-end: 8px;">
+            <label for="password" style="margin: 0;">Password <span class="required-star">*</span></label>
+            <a href="#" style="font-size: var(--size-caption); color: var(--color-primary); text-decoration: none;">Forgot?</a>
           </div>
           <input type="password" id="password" class="form-control" data-minlength="8" placeholder="Enter your password" required autocomplete="current-password">
           <div class="invalid-feedback form-feedback">Password must be at least 8 characters.</div>
         </div>
 
+        <!-- Checkbox for Remember Me -->
+        <div style="display: flex; align-items: center; gap: 8px; margin-block-start: 8px; margin-block-end: 16px;">
+          <input type="checkbox" id="rememberMe" style="accent-color: var(--color-primary); width: 16px; height: 16px; cursor: pointer;">
+          <label for="rememberMe" style="font-size: var(--size-caption); cursor: pointer; color: var(--color-text-muted); margin: 0;">Remember me</label>
+        </div>
+
         <!-- Primary Action: strictly labeled "Login" -->
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-block-start: var(--space-2);">
+        <button type="submit" class="btn btn-primary" style="width: 100%;">
           Login
         </button>
 
